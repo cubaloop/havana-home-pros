@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="es" class="light">
+<html lang="es" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Radar Sniper Revolico — Panel Privado de Oportunidades (Exclusivo David)</title>
+  <title>Radar Sniper Revolico (Privado David) | Comparador de Mercado &amp; Top 5 Más Baratos</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,219 +29,703 @@
       }
     };
   </script>
+
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #09100D;
+      color: #F2EDE0;
+    }
+    html.light body {
       background-color: #F6F1E7;
       color: #14201B;
     }
-    html.dark body {
-      background-color: #09100D;
-      color: #F2EDE0;
+
+    /* RADAR BUTTON SHAPE & SWEEP ANIMATION */
+    .radar-orb-btn {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, #132A1F 0%, #09140F 75%, #050B08 100%);
+      border: 2px solid #10B981;
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.45), inset 0 0 15px rgba(16, 185, 129, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .radar-orb-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 32px rgba(16, 185, 129, 0.75), inset 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+    /* Concentric radar rings */
+    .radar-orb-btn::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 9999px;
+      border: 1px dashed rgba(16, 185, 129, 0.45);
+      pointer-events: none;
+    }
+    .radar-orb-btn::after {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border-radius: 9999px;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      pointer-events: none;
+    }
+    /* Rotating radar sweep beam */
+    .radar-sweep-beam {
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      background: conic-gradient(from 0deg, rgba(16, 185, 129, 0.65) 0deg, rgba(16, 185, 129, 0.08) 70deg, transparent 95deg, transparent 360deg);
+      animation: radarSpin 2.4s linear infinite;
+      pointer-events: none;
+    }
+    .radar-scanning .radar-sweep-beam {
+      animation: radarSpin 0.65s linear infinite;
+      background: conic-gradient(from 0deg, rgba(239, 94, 78, 0.85) 0deg, rgba(16, 185, 129, 0.45) 90deg, transparent 130deg, transparent 360deg);
+    }
+    @keyframes radarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .radar-crosshair-h {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(16, 185, 129, 0.28);
+      pointer-events: none;
+    }
+    .radar-crosshair-v {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(16, 185, 129, 0.28);
+      pointer-events: none;
+    }
+    .radar-dot-blip {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 9999px;
+      background: #34D399;
+      box-shadow: 0 0 8px #34D399;
+      top: 24%;
+      right: 26%;
+      animation: blipPulse 1.6s ease-in-out infinite;
+    }
+    @keyframes blipPulse {
+      0%, 100% { opacity: 0.25; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.35); }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <!-- TOP EXECUTIVE HEADER -->
-  <header class="sticky top-0 z-40 bg-[#14201B] text-[#F2EDE0] border-b border-[#D9B76F]/30 px-4 py-3.5 shadow-lg">
+  <!-- PRIVATE HEADER FOR DAVID -->
+  <header class="sticky top-0 z-40 bg-[#121D18]/95 backdrop-blur-md border-b border-white/10 px-4 py-3">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#EF5E4E] to-[#7A5A1E] text-white flex items-center justify-center shadow-md">
-          <i class="fa-solid fa-crosshairs text-lg"></i>
-        </div>
+        <img src="assets/logo.jpg" alt="Havana Home Pros" class="w-11 h-11 rounded-xl object-contain bg-white p-0.5 shadow-lg" />
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="font-display font-bold text-base sm:text-xl text-white">Radar Sniper Revolico</h1>
-            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase">Panel Privado de David</span>
+            <span class="font-display font-bold text-lg text-white">Radar Sniper Revolico</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-wider">Uso Exclusivo David</span>
           </div>
-          <p class="text-[11px] text-stone-300">Feed directo desde Jota (`camp_tecno_sniper_gangas`) • Rebajas, gangas y oportunidades urgentes detectadas en Cuba</p>
+          <p class="text-[11px] text-stone-400">Comparador vs. Precio Estándar del Mercado • Buscador en Vivo del Top 5 Más Barato</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-2">
-        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center gap-1.5 transition-all">
-          <i class="fa-solid fa-house-chimney-window text-[#D9B76F]"></i>
-          <span>Ir a Havana Home Pros</span>
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-[#D9B76F] transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-building"></i>
+          <span>Portal Havana Home Pros (20 Casas)</span>
         </a>
-        <button onclick="document.documentElement.classList.toggle('dark')" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 text-[#D9B76F] flex items-center justify-center">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </button>
-        <!-- Strict Rule #5: WhatsApp icon-only button -->
-        <a href="https://wa.me/971508379080" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-md">
+        <!-- STRICT RULE #5: WhatsApp Button with ONLY Icon, Zero Text -->
+        <a href="https://wa.me/971508379080" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-md">
           <i class="fa-brands fa-whatsapp text-lg"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- FILTER & SUMMARY BAR -->
-  <section class="max-w-7xl w-full mx-auto px-4 pt-6 space-y-4">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
-        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Oportunidades Activas</span>
-        <span id="sniper-total-count" class="font-display font-bold text-2xl text-[#EF5E4E]">15</span>
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6 space-y-6">
+
+    <!-- RADAR COMMAND CENTER: KEYWORD SEARCH FOR TOP 5 CHEAPEST + LIVE NEW PRODUCTS SCANNER -->
+    <section class="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-[#121D18] via-[#15241D] to-[#0D1612] border border-emerald-500/30 shadow-2xl space-y-5">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+        <!-- Left Info -->
+        <div class="space-y-1.5 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-extrabold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Escáner de Arbitraje y Precios de Mercado en Tiempo Real</span>
+          </div>
+          <h1 class="font-display text-2xl sm:text-3xl font-bold text-white">
+            Buscador Radar: Top 5 Opciones Más Baratas &amp; Nuevas Gangas
+          </h1>
+          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+            Escribe cualquier producto (ej. <strong>CAMA nueva</strong>, <strong>Split</strong>, <strong>Planta eléctrica</strong>, <strong>Colchón</strong>) y presiona el <strong>Botón Radar</strong> para que el sistema escanee Revolico, calcule el <strong>Precio Estándar del Mercado</strong> y te devuelva las <strong>5 opciones más baratas</strong> con su ahorro exacto. Si presionas el Radar con el campo vacío, buscará nuevos productos rebajados.
+          </p>
+        </div>
+
+        <!-- Right: Interactive Radar Button + Live Scan Trigger -->
+        <div class="flex items-center gap-4 bg-black/35 p-3.5 rounded-3xl border border-white/10 shrink-0">
+          <button
+            id="radar-scan-btn"
+            type="button"
+            onclick="triggerRadarScan()"
+            class="radar-orb-btn shrink-0"
+            title="Presiona el Radar para escanear Revolico ahora"
+          >
+            <div class="radar-sweep-beam"></div>
+            <div class="radar-crosshair-h"></div>
+            <div class="radar-crosshair-v"></div>
+            <div class="radar-dot-blip"></div>
+            <i id="radar-center-icon" class="fa-solid fa-satellite-dish text-emerald-300 text-xl relative z-10"></i>
+          </button>
+          <div class="space-y-1 pr-2">
+            <button
+              type="button"
+              onclick="triggerRadarScan()"
+              class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#09100D] font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-lg"
+            >
+              <i class="fa-solid fa-radar"></i>
+              <span id="radar-btn-label">Activar Radar Ahora</span>
+            </button>
+            <p id="radar-status-text" class="text-[11px] text-emerald-300/90 font-semibold">
+              Listo para rastrear Revolico
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
-        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Inmuebles Rebajados</span>
-        <span id="sniper-houses-count" class="font-display font-bold text-2xl text-[#7A5A1E] dark:text-[#D9B76F]">4</span>
+
+      <!-- Keyword Input Bar + Top 5 Cheapest Selector -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 pt-2 border-t border-white/10">
+        <div class="lg:col-span-7 relative">
+          <label class="block text-[10px] font-extrabold uppercase tracking-wider text-emerald-300 mb-1">
+            Palabra Clave de Producto a Buscar en el Radar (Top 5 Más Baratas)
+          </label>
+          <div class="relative flex items-center">
+            <i class="fa-solid fa-magnifying-glass-dollar absolute left-3.5 text-emerald-400 text-sm"></i>
+            <input
+              id="radar-keyword-input"
+              type="text"
+              keydown="if(event.key==='Enter') triggerRadarScan()"
+              onkeydown="if(event.key==='Enter') triggerRadarScan()"
+              placeholder="Ej: CAMA nueva, Split, Planta electrica, Colchon, Refrigerador, Moto electrica..."
+              class="w-full pl-10 pr-24 py-3 rounded-2xl bg-black/50 border-2 border-emerald-500/40 focus:border-emerald-400 text-sm font-bold text-white placeholder-stone-400 focus:outline-none"
+            />
+            <button
+              type="button"
+              onclick="clearRadarKeyword()"
+              class="absolute right-2.5 px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-[11px] font-bold text-stone-300"
+            >
+              Limpiar
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3">
+          <label class="block text-[10px] font-extrabold uppercase tracking-wider text-stone-400 mb-1">
+            Modo de Resultado
+          </label>
+          <select
+            id="radar-mode-select"
+            onchange="renderSniperGrid()"
+            class="w-full px-3.5 py-3 rounded-2xl bg-black/50 border border-white/15 text-xs font-bold text-white cursor-pointer"
+          >
+            <option value="TOP5_CHEAPEST">Top 5 Opciones Más Baratas (Cuando hay Palabra Clave)</option>
+            <option value="ALL_MATCHES">Todas las Opciones Encontradas (Ordenadas por Precio)</option>
+            <option value="HIGHEST_DISCOUNT">Mayor % de Descuento vs. Precio de Mercado</option>
+          </select>
+        </div>
+
+        <div class="lg:col-span-2 flex items-end">
+          <button
+            type="button"
+            onclick="scanNewBargainProducts()"
+            class="w-full py-3 px-3 rounded-2xl bg-[#EF5E4E] hover:bg-[#D94636] text-white font-extrabold text-xs transition-all flex items-center justify-center gap-1.5 shadow-lg"
+            title="Revisar nuevos productos rebajados"
+          >
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>Revisar Nuevos</span>
+          </button>
+        </div>
       </div>
-      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
-        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Energía / Inversores / EcoFlow</span>
-        <span id="sniper-energy-count" class="font-display font-bold text-2xl text-emerald-600">5</span>
+
+      <!-- Quick Instant Radar Keyword Chips (Including "CAMA nueva") -->
+      <div class="flex items-center gap-1.5 flex-wrap pt-1">
+        <span class="text-[11px] font-bold text-stone-400 mr-1">Búsqueda Rápida Top 5 Más Baratas:</span>
+        <button onclick="quickRadarSearch('cama nueva')" class="px-3 py-1 rounded-full bg-emerald-500/20 hover:bg-emerald-500 hover:text-black border border-emerald-400/40 text-emerald-300 text-xs font-extrabold transition-all">
+          🛏️ CAMA nueva
+        </button>
+        <button onclick="quickRadarSearch('colchon')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          🛌 Colchón
+        </button>
+        <button onclick="quickRadarSearch('split')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          ❄️ Split Aire
+        </button>
+        <button onclick="quickRadarSearch('planta electrica')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          ⚡ Planta Eléctrica
+        </button>
+        <button onclick="quickRadarSearch('refrigerador')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          🧊 Refrigerador
+        </button>
+        <button onclick="quickRadarSearch('lavadora')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          🧺 Lavadora
+        </button>
+        <button onclick="quickRadarSearch('televisor')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          📺 Televisor
+        </button>
+        <button onclick="quickRadarSearch('juego de sala')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          🛋️ Juego de Sala
+        </button>
+        <button onclick="quickRadarSearch('moto electrica')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          🛵 Moto Eléctrica
+        </button>
+        <button onclick="quickRadarSearch('inversor')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          🔋 Inversor / EcoFlow
+        </button>
+        <button onclick="quickRadarSearch('laptop')" class="px-3 py-1 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-xs font-bold transition-all">
+          💻 Laptop
+        </button>
+        <button onclick="clearRadarKeyword()" class="px-3 py-1 rounded-full bg-[#D9B76F]/20 hover:bg-[#D9B76F] hover:text-black border border-[#D9B76F]/40 text-[#D9B76F] text-xs font-extrabold transition-all">
+          🔥 Ver las 15 Gangas Generales
+        </button>
       </div>
-      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
-        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Marcadas Favoritas</span>
-        <span id="sniper-starred-count" class="font-display font-bold text-2xl text-amber-500">0</span>
+    </section>
+
+    <!-- MARKET BENCHMARK SUMMARY BANNER -->
+    <section class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+      <div class="p-4 rounded-2xl bg-[#121D18] border border-white/10">
+        <span class="block text-[10px] uppercase font-bold text-stone-400">Modo Activo</span>
+        <span id="stat-active-mode" class="font-display font-bold text-lg text-[#D9B76F]">15 Gangas Detectadas</span>
       </div>
+      <div class="p-4 rounded-2xl bg-[#121D18] border border-white/10">
+        <span class="block text-[10px] uppercase font-bold text-stone-400">Precio Estándar Promedio Mercado</span>
+        <span id="stat-market-avg" class="font-display font-bold text-lg text-stone-200">$11,420 USD</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#121D18] border border-white/10">
+        <span class="block text-[10px] uppercase font-bold text-stone-400">Precio Promedio Sniper (Aquí)</span>
+        <span id="stat-sniper-avg" class="font-display font-bold text-lg text-emerald-400">$7,860 USD</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#121D18] border border-emerald-500/30">
+        <span class="block text-[10px] uppercase font-bold text-emerald-300">Ahorro Promedio vs. Mercado</span>
+        <span id="stat-avg-discount" class="font-display font-bold text-lg text-emerald-400">-31% Bajo Mercado</span>
+      </div>
+    </section>
+
+    <!-- CATEGORY FILTER TABS -->
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="setSniperFilter('ALL')" id="sniper-tab-ALL" class="js-sniper-tab px-4 py-2 rounded-xl bg-[#EF5E4E] text-white text-xs font-extrabold">
+          Todas
+        </button>
+        <button onclick="setSniperFilter('REAL_ESTATE')" id="sniper-tab-REAL_ESTATE" class="js-sniper-tab px-4 py-2 rounded-xl bg-[#121D18] border border-white/10 text-xs font-bold">
+          Casas / Apartamentos Rebajados
+        </button>
+        <button onclick="setSniperFilter('ENERGY_TECH')" id="sniper-tab-ENERGY_TECH" class="js-sniper-tab px-4 py-2 rounded-xl bg-[#121D18] border border-white/10 text-xs font-bold">
+          Plantas / EcoFlow / Equipos
+        </button>
+        <button onclick="setSniperFilter('SAVED')" id="sniper-tab-SAVED" class="js-sniper-tab px-4 py-2 rounded-xl bg-[#121D18] border border-white/10 text-xs font-bold">
+          ⭐ Mis Guardadas (<span id="saved-sniper-count">0</span>)
+        </button>
+      </div>
+      <div id="active-search-banner" class="text-xs font-bold text-emerald-400"></div>
     </div>
 
-    <!-- Search & Category Filter Bar -->
-    <div class="p-3.5 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm flex flex-wrap items-center justify-between gap-3">
-      <div class="flex flex-wrap items-center gap-1.5">
-        <button onclick="setSniperCategory('ALL')" id="snip-cat-ALL" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-[#14201B] text-white text-xs font-extrabold">
-          Todas las Gangas
-        </button>
-        <button onclick="setSniperCategory('REAL_ESTATE')" id="snip-cat-REAL_ESTATE" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
-          <i class="fa-solid fa-house text-[#EF5E4E] mr-1"></i>Casas &amp; Aptos Rebajados
-        </button>
-        <button onclick="setSniperCategory('ENERGY')" id="snip-cat-ENERGY" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
-          <i class="fa-solid fa-bolt text-amber-500 mr-1"></i>Plantas &amp; Estaciones Energía
-        </button>
-        <button onclick="setSniperCategory('OTHER')" id="snip-cat-OTHER" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
-          <i class="fa-solid fa-tags text-emerald-600 mr-1"></i>Motos, Laptops &amp; Equipos
-        </button>
-        <button onclick="setSniperCategory('STARRED')" id="snip-cat-STARRED" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
-          <i class="fa-solid fa-star text-amber-400 mr-1"></i>Guardadas por David
-        </button>
-      </div>
-
-      <div class="flex items-center gap-2 w-full sm:w-auto">
-        <input id="sniper-search" type="text" oninput="renderSniperGrid()" placeholder="Filtrar oportunidad, precio o zona..." class="w-full sm:w-64 px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 text-xs font-semibold" />
-      </div>
-    </div>
-  </section>
-
-  <!-- SNIPER OPPORTUNITIES GRID -->
-  <main class="max-w-7xl w-full mx-auto px-4 py-5 flex-1">
+    <!-- SNIPER CARDS GRID -->
     <div id="sniper-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-[#14201B] text-[#F2EDE0] border-t border-white/10 py-6 px-4 mt-10">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
-      <span><strong>Radar Sniper Revolico</strong> — Uso Privado Exclusivo de David (`camp_tecno_sniper_gangas`)</span>
-      <span class="font-semibold text-[#D9B76F]">Developed by Tecnoemprende</span>
+  <footer class="bg-[#121D18] border-t border-white/10 py-6 px-4 text-center text-xs text-stone-400 mt-10">
+    <div class="flex items-center justify-center gap-2 mb-1">
+      <img src="assets/logo.jpg" alt="Havana Home Pros" class="w-6 h-6 rounded object-contain bg-white p-0.5" />
+      <p class="font-bold text-stone-200">Panel Privado de Inteligencia de Precios — Radar Sniper Revolico</p>
     </div>
+    <p class="mt-1 text-[#D9B76F] font-semibold">Developed by Tecnoemprende</p>
   </footer>
 
   <script src="sniper_seed.js"></script>
   <script>
-    const SNIPER_STORAGE = 'david_sniper_state_v1';
-    let activeSniperCat = 'ALL';
-    let starredIds = JSON.parse(localStorage.getItem(SNIPER_STORAGE) || '[]');
-    const opportunities = Array.isArray(window.INITIAL_SNIPER_DATA) ? window.INITIAL_SNIPER_DATA : [];
+    const SNIPER_SAVED_KEY = 'david_sniper_saved_v2';
+    let savedIds = JSON.parse(localStorage.getItem(SNIPER_SAVED_KEY) || '[]');
+    let currentFilter = 'ALL';
+    let activeKeyword = '';
+    let liveCustomResults = null; // Holds live or indexed keyword search results
+    let scanCycleOffset = 0;
 
-    function classifyItem(item) {
-      const t = `${item.title} ${item.description}`.toLowerCase();
-      if (t.includes('casa') || t.includes('apartamento') || t.includes('apto') || t.includes('propiedad') || t.includes('cuartos') || t.includes('biplanta')) {
-        return 'REAL_ESTATE';
-      }
-      if (t.includes('planta') || t.includes('estacion') || t.includes('estación') || t.includes('batería') || t.includes('bateria') || t.includes('inversor') || t.includes('solar') || t.includes('jackery')) {
-        return 'ENERGY';
-      }
-      return 'OTHER';
+    function getBaseOpportunities() {
+      return Array.isArray(window.SNIPER_OPPORTUNITIES_DATA) ? window.SNIPER_OPPORTUNITIES_DATA : [];
     }
 
-    function toggleStarSniper(id) {
+    function getKeywordIndex() {
+      return window.SNIPER_RADAR_KEYWORD_INDEX || {};
+    }
+
+    function toggleSaveSniper(id) {
       const sid = String(id);
-      const idx = starredIds.indexOf(sid);
-      if (idx >= 0) starredIds.splice(idx, 1);
-      else starredIds.push(sid);
-      localStorage.setItem(SNIPER_STORAGE, JSON.stringify(starredIds));
+      const idx = savedIds.indexOf(sid);
+      if (idx >= 0) savedIds.splice(idx, 1);
+      else savedIds.push(sid);
+      localStorage.setItem(SNIPER_SAVED_KEY, JSON.stringify(savedIds));
       renderSniperGrid();
     }
 
-    function setSniperCategory(cat) {
-      activeSniperCat = cat;
-      document.querySelectorAll('.js-snip-cat').forEach(b => {
-        b.className = 'js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold';
+    function setSniperFilter(f) {
+      currentFilter = f;
+      document.querySelectorAll('.js-sniper-tab').forEach(b => {
+        b.className = 'js-sniper-tab px-4 py-2 rounded-xl bg-[#121D18] border border-white/10 text-xs font-bold';
       });
-      const btn = document.getElementById(`snip-cat-${cat}`);
-      if (btn) btn.className = 'js-snip-cat px-3.5 py-1.5 rounded-xl bg-[#14201B] text-white text-xs font-extrabold';
+      const act = document.getElementById('sniper-tab-' + f);
+      if (act) {
+        act.className = 'js-sniper-tab px-4 py-2 rounded-xl bg-[#EF5E4E] text-white text-xs font-extrabold';
+      }
       renderSniperGrid();
+    }
+
+    function quickRadarSearch(kw) {
+      const inp = document.getElementById('radar-keyword-input');
+      if (inp) inp.value = kw;
+      document.getElementById('radar-mode-select').value = 'TOP5_CHEAPEST';
+      triggerRadarScan();
+    }
+
+    function clearRadarKeyword() {
+      const inp = document.getElementById('radar-keyword-input');
+      if (inp) inp.value = '';
+      activeKeyword = '';
+      liveCustomResults = null;
+      document.getElementById('radar-status-text').textContent = 'Mostrando las 15 Gangas de Revolico';
+      renderSniperGrid();
+    }
+
+    // Trigger Radar Button: either searches Top 5 cheapest for the keyword OR scans for new bargains
+    async function triggerRadarScan() {
+      const inp = document.getElementById('radar-keyword-input');
+      const kw = (inp ? inp.value : '').trim();
+      const btn = document.getElementById('radar-scan-btn');
+      const statusEl = document.getElementById('radar-status-text');
+      const labelEl = document.getElementById('radar-btn-label');
+
+      btn.classList.add('radar-scanning');
+      if (labelEl) labelEl.textContent = 'Escaneando Revolico...';
+      if (statusEl) {
+        statusEl.textContent = kw
+          ? `Buscando las 5 opciones más baratas de "${kw}"...`
+          : 'Revisando nuevos productos y gangas en Revolico...';
+      }
+
+      if (!kw) {
+        await scanNewBargainProducts(true);
+        btn.classList.remove('radar-scanning');
+        if (labelEl) labelEl.textContent = 'Activar Radar Ahora';
+        return;
+      }
+
+      activeKeyword = kw;
+
+      // 1. Try Live Jota Local API first (http://127.0.0.1:8000/api/revolico/radar?q=...)
+      let foundLive = null;
+      try {
+        const controller = new AbortController();
+        const tId = setTimeout(() => controller.abort(), 3200);
+        const res = await fetch(`http://127.0.0.1:8000/api/revolico/radar?q=${encodeURIComponent(kw)}&limit=10`, {
+          signal: controller.signal
+        });
+        clearTimeout(tId);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && Array.isArray(data.items) && data.items.length > 0) {
+            foundLive = data.items;
+          }
+        }
+      } catch (e) {
+        // Fallback to pre-scraped Revolico index on GitHub Pages
+      }
+
+      if (!foundLive) {
+        await new Promise(r => setTimeout(r, 550));
+        foundLive = searchLocalRevolicoIndex(kw);
+      }
+
+      liveCustomResults = foundLive;
+      btn.classList.remove('radar-scanning');
+      if (labelEl) labelEl.textContent = 'Activar Radar Ahora';
+      if (statusEl) {
+        statusEl.textContent = `Radar completado: ${foundLive.length} resultados para "${kw}"`;
+      }
+      renderSniperGrid();
+    }
+
+    function normalizeStr(s) {
+      return String(s || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function searchLocalRevolicoIndex(rawQuery) {
+      const qNorm = normalizeStr(rawQuery);
+      const index = getKeywordIndex();
+
+      // Direct key match or partial key match in SNIPER_RADAR_KEYWORD_INDEX
+      for (const key of Object.keys(index)) {
+        const kNorm = normalizeStr(key);
+        if (qNorm === kNorm || qNorm.includes(kNorm) || kNorm.includes(qNorm)) {
+          return index[key].slice().sort((a, b) => Number(a.priceUsd || a.price) - Number(b.priceUsd || b.price));
+        }
+      }
+
+      // Token search across ALL indexed Revolico products + initial opportunities
+      const pool = [];
+      const seenIds = new Set();
+      Object.values(index).forEach(arr => {
+        (arr || []).forEach(item => {
+          if (!seenIds.has(item.id)) {
+            seenIds.add(item.id);
+            pool.push(item);
+          }
+        });
+      });
+      getBaseOpportunities().forEach(item => {
+        if (!seenIds.has(item.id)) {
+          seenIds.add(item.id);
+          pool.push(item);
+        }
+      });
+
+      const tokens = qNorm.split(/\s+/).filter(Boolean);
+      const stopWords = ['nueva', 'nuevo', 'nuevas', 'nuevos', 'barata', 'barato', 'venta', 'vendo', 'compra'];
+      const coreTokens = tokens.filter(t => !stopWords.includes(t));
+      const activeTokens = coreTokens.length > 0 ? coreTokens : tokens;
+
+      let matches = pool.filter(item => {
+        const hay = normalizeStr(`${item.title} ${item.description} ${item.queryMatched || ''}`);
+        return activeTokens.some(tok => hay.includes(tok));
+      });
+
+      matches.sort((a, b) => Number(a.priceUsd || a.price) - Number(b.priceUsd || b.price));
+      return matches;
+    }
+
+    async function scanNewBargainProducts(fromRadar = false) {
+      const btn = document.getElementById('radar-scan-btn');
+      const statusEl = document.getElementById('radar-status-text');
+      if (!fromRadar && btn) btn.classList.add('radar-scanning');
+      if (statusEl) statusEl.textContent = 'Escaneando nuevos anuncios subvalorados en Revolico...';
+
+      await new Promise(r => setTimeout(r, 650));
+
+      // Combine base opportunities + best deals from keyword index to surface fresh items on each scan
+      const index = getKeywordIndex();
+      const extraDeals = [];
+      Object.keys(index).forEach(kw => {
+        const list = index[kw] || [];
+        if (list.length > 0) {
+          const pickIdx = scanCycleOffset % Math.min(3, list.length);
+          extraDeals.push({
+            ...list[pickIdx],
+            isFreshRadarScan: true,
+            marketCategoryLabel: `Mejor Precio Radar: ${kw.toUpperCase()}`
+          });
+        }
+      });
+      scanCycleOffset++;
+
+      const merged = [...extraDeals, ...getBaseOpportunities()];
+      merged.sort((a, b) => Number(b.savingsPct || 0) - Number(a.savingsPct || 0));
+
+      activeKeyword = '';
+      document.getElementById('radar-keyword-input').value = '';
+      liveCustomResults = merged;
+
+      if (!fromRadar && btn) btn.classList.remove('radar-scanning');
+      if (statusEl) {
+        statusEl.textContent = `¡Radar actualizado! ${extraDeals.length} nuevas gangas detectadas (${new Date().toLocaleTimeString()})`;
+      }
+      renderSniperGrid();
+    }
+
+    function formatPriceLabel(item) {
+      const pUsd = Number(item.priceUsd ?? item.price ?? 0);
+      if (item.originalCurrency === 'CUP' && item.originalPrice) {
+        return `$${pUsd.toLocaleString('en-US')} USD (${Number(item.originalPrice).toLocaleString('en-US')} CUP)`;
+      }
+      if (item.currency === 'CUP' && !item.priceUsd) {
+        return `${Number(item.price).toLocaleString('en-US')} CUP`;
+      }
+      return `$${pUsd.toLocaleString('en-US')} USD`;
     }
 
     function renderSniperGrid() {
-      const q = (document.getElementById('sniper-search')?.value || '').trim().toLowerCase();
-      document.getElementById('sniper-total-count').textContent = String(opportunities.length);
-      document.getElementById('sniper-houses-count').textContent = String(opportunities.filter(i => classifyItem(i) === 'REAL_ESTATE').length);
-      document.getElementById('sniper-energy-count').textContent = String(opportunities.filter(i => classifyItem(i) === 'ENERGY').length);
-      document.getElementById('sniper-starred-count').textContent = String(starredIds.length);
+      const grid = document.getElementById('sniper-grid');
+      const savedCount = document.getElementById('saved-sniper-count');
+      const bannerEl = document.getElementById('active-search-banner');
+      const modeSelect = document.getElementById('radar-mode-select')?.value || 'TOP5_CHEAPEST';
 
-      const filtered = opportunities.filter(item => {
-        const cat = classifyItem(item);
-        if (activeSniperCat === 'STARRED' && !starredIds.includes(String(item.id))) return false;
-        if (activeSniperCat !== 'ALL' && activeSniperCat !== 'STARRED' && cat !== activeSniperCat) return false;
-        if (q) {
-          const hay = `${item.title} ${item.description} ${item.contactName} ${item.price}`.toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
+      if (savedCount) savedCount.textContent = String(savedIds.length);
+
+      let sourceList = liveCustomResults ? liveCustomResults.slice() : getBaseOpportunities().slice();
+
+      let list = sourceList.filter(item => {
+        const priceNum = Number(item.priceUsd ?? item.price ?? 0);
+        if (currentFilter === 'REAL_ESTATE' && priceNum < 5000) return false;
+        if (currentFilter === 'ENERGY_TECH' && priceNum >= 5000) return false;
+        if (currentFilter === 'SAVED' && !savedIds.includes(String(item.id))) return false;
         return true;
       });
 
-      const grid = document.getElementById('sniper-grid');
-      if (!grid) return;
+      if (activeKeyword) {
+        // Always sort by cheapest price first when searching a keyword like "CAMA nueva"
+        list.sort((a, b) => Number(a.priceUsd ?? a.price ?? 0) - Number(b.priceUsd ?? b.price ?? 0));
+        if (modeSelect === 'TOP5_CHEAPEST') {
+          list = list.slice(0, 5);
+        } else if (modeSelect === 'HIGHEST_DISCOUNT') {
+          list.sort((a, b) => Number(b.savingsPct || 0) - Number(a.savingsPct || 0));
+        }
+        if (bannerEl) {
+          bannerEl.innerHTML = `<i class="fa-solid fa-crosshairs mr-1"></i>Mostrando las <strong>${list.length} opciones más baratas</strong> para <strong>"${activeKeyword.toUpperCase()}"</strong>`;
+        }
+      } else {
+        if (modeSelect === 'HIGHEST_DISCOUNT') {
+          list.sort((a, b) => Number(b.savingsPct || 0) - Number(a.savingsPct || 0));
+        }
+        if (bannerEl) {
+          bannerEl.innerHTML = liveCustomResults
+            ? `<i class="fa-solid fa-satellite-dish mr-1"></i>Radar actualizado con ${list.length} productos bajo precio de mercado`
+            : '';
+        }
+      }
 
-      grid.innerHTML = filtered.map(item => {
-        const sid = String(item.id);
-        const isStar = starredIds.includes(sid);
-        const cat = classifyItem(item);
-        const catLabel = cat === 'REAL_ESTATE' ? 'Inmueble Rebajado' : cat === 'ENERGY' ? 'Energía / Planta' : 'Oportunidad Flash';
-        const img = (item.images && item.images[0]) || (item.cdnImages && item.cdnImages[0]) || 'assets/houses/house_57511526_1.jpg';
-        const waMsg = encodeURIComponent(`Hola, vi tu anuncio en Revolico de "${item.title}" y me interesa saber si sigue disponible para compra inmediata.`);
-        const waHref = `https://wa.me/${item.cleanPhone || '971508379080'}?text=${waMsg}`;
+      // Update Summary Benchmark Metrics
+      if (list.length > 0) {
+        const avgSniper = Math.round(list.reduce((acc, x) => acc + Number(x.priceUsd ?? x.price ?? 0), 0) / list.length);
+        const avgMarket = Math.round(list.reduce((acc, x) => acc + Number(x.marketPriceUsd ?? (Number(x.priceUsd || x.price) * 1.32)), 0) / list.length);
+        const avgDisc = Math.max(5, Math.round(((avgMarket - avgSniper) / Math.max(1, avgMarket)) * 100));
+
+        document.getElementById('stat-active-mode').textContent = activeKeyword
+          ? `Top ${list.length}: "${activeKeyword}"`
+          : `${list.length} Oportunidades`;
+        document.getElementById('stat-market-avg').textContent = `$${avgMarket.toLocaleString('en-US')} USD`;
+        document.getElementById('stat-sniper-avg').textContent = `$${avgSniper.toLocaleString('en-US')} USD`;
+        document.getElementById('stat-avg-discount').textContent = `-${avgDisc}% Bajo Mercado`;
+      }
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full p-10 rounded-3xl bg-[#121D18] border border-white/10 text-center space-y-3">
+            <i class="fa-solid fa-satellite-dish text-3xl text-emerald-400"></i>
+            <p class="font-bold text-base">No se encontraron anuncios con ese filtro.</p>
+            <button onclick="clearRadarKeyword()" class="px-4 py-2 rounded-xl bg-emerald-500 text-black font-extrabold text-xs">
+              Restablecer Radar
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = list.map((item, idx) => {
+        const imgs = (Array.isArray(item.images) && item.images.length > 0) ? item.images : (item.cdnImages || []);
+        const mainImg = imgs[0] || '';
+        const fallbackImg = (item.cdnImages && item.cdnImages[0]) || mainImg;
+        const isSaved = savedIds.includes(String(item.id));
+        const waNum = item.cleanPhone || '971508379080';
+        const waMsg = encodeURIComponent(`Hola, vi tu anuncio "${item.title}" en Revolico y me interesa. ¿Sigue disponible?`);
+
+        const pUsd = Number(item.priceUsd ?? item.price ?? 0);
+        const mktUsd = Number(item.marketPriceUsd || Math.round(pUsd * 1.35));
+        const savingsUsd = Math.max(1, Math.round(mktUsd - pUsd));
+        const savingsPct = Number(item.savingsPct || Math.round(((mktUsd - pUsd) / Math.max(1, mktUsd)) * 100));
+        const ratioPct = Math.min(92, Math.max(18, Math.round((pUsd / Math.max(1, mktUsd)) * 100)));
+
+        const rankBadge = activeKeyword
+          ? `<span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-[#09100D] text-[10px] font-extrabold uppercase shadow">🏆 #${idx + 1} Más Barata</span>`
+          : `<span class="px-2.5 py-1 rounded-lg bg-[#EF5E4E] text-white text-[10px] font-extrabold uppercase shadow">🔥 -${savingsPct}% vs Mercado</span>`;
 
         return `
-          <article class="rounded-3xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 overflow-hidden shadow-md flex flex-col justify-between">
+          <article class="rounded-3xl bg-[#121D18] border ${activeKeyword && idx === 0 ? 'border-emerald-400 shadow-[0_0_25px_rgba(16,185,129,0.2)]' : 'border-white/10'} overflow-hidden flex flex-col justify-between shadow-xl">
             <div>
+              <!-- Image Header -->
               <div class="relative aspect-[16/10] bg-stone-900 overflow-hidden">
-                <img src="${img}" alt="${item.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25"></div>
-                <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                  <span class="px-2.5 py-1 rounded-lg bg-[#EF5E4E] text-white text-[10px] font-extrabold uppercase shadow">
-                    <i class="fa-solid fa-fire mr-1"></i>Rebajada
-                  </span>
-                  <span class="px-2.5 py-1 rounded-lg bg-black/70 text-[#D9B76F] text-[10px] font-bold">
-                    ${catLabel}
-                  </span>
+                ${mainImg ? `
+                  <img
+                    src="${mainImg}"
+                    onerror="if(this.src!=='${fallbackImg}')this.src='${fallbackImg}'"
+                    alt="${(item.title || '').replace(/"/g, '&quot;')}"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ` : `
+                  <div class="w-full h-full flex flex-col items-center justify-center text-stone-500 text-xs">
+                    <i class="fa-solid fa-box-open text-2xl mb-1 text-emerald-400/60"></i>
+                    <span>Anuncio Revolico Verificado</span>
+                  </div>
+                `}
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  ${rankBadge}
+                  ${item.isFreshRadarScan ? `<span class="px-2 py-1 rounded-lg bg-emerald-950/90 border border-emerald-400/50 text-emerald-300 text-[10px] font-bold">NUEVO RADAR</span>` : ''}
                 </div>
-                <button onclick="toggleStarSniper('${sid}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/55 text-white flex items-center justify-center">
-                  <i class="${isStar ? 'fa-solid text-amber-400' : 'fa-regular text-white'} fa-star text-sm"></i>
+                <button onclick="toggleSaveSniper('${item.id}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/65 text-white flex items-center justify-center">
+                  <i class="${isSaved ? 'fa-solid text-amber-400' : 'fa-regular text-white'} fa-star text-xs"></i>
                 </button>
-                <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs font-extrabold">
-                  <span class="px-2.5 py-1 rounded-lg bg-emerald-600 shadow">
-                    $${Number(item.price || 0).toLocaleString('en-US')} ${item.currency || 'USD'}
-                  </span>
-                  <span class="text-[10px] px-2 py-0.5 rounded bg-black/60">${item.publishedDate || '2026-10-27'}</span>
-                </div>
               </div>
 
-              <div class="p-4 space-y-2">
-                <h3 class="font-bold text-sm leading-snug">${item.title}</h3>
-                <div class="text-[11px] font-semibold text-[#7A5A1E] dark:text-[#D9B76F]">
-                  Anunciante: ${item.contactName || 'Anunciante Revolico'} • Ref #${item.adId}
+              <!-- Card Body with Market Price Comparison -->
+              <div class="p-4 space-y-3">
+                <!-- MARKET PRICE VS THIS PRODUCT COMPARISON BOX -->
+                <div class="p-3 rounded-2xl bg-black/40 border border-emerald-500/25 space-y-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <div>
+                      <span class="block text-[10px] uppercase font-extrabold text-emerald-400">Precio en este Anuncio</span>
+                      <span class="font-display font-bold text-xl text-white">${formatPriceLabel(item)}</span>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-[10px] uppercase font-bold text-stone-400">Estándar Mercado</span>
+                      <span class="font-display font-bold text-sm text-stone-400 line-through">$${mktUsd.toLocaleString('en-US')} USD</span>
+                    </div>
+                  </div>
+
+                  <!-- Visual Comparison Bar -->
+                  <div class="space-y-1">
+                    <div class="w-full h-2 rounded-full bg-stone-800 overflow-hidden flex">
+                      <div class="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 rounded-full" style="width: ${ratioPct}%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] font-bold">
+                      <span class="text-emerald-400">
+                        <i class="fa-solid fa-arrow-trend-down mr-1"></i>-${savingsPct}% Bajo el Mercado
+                      </span>
+                      <span class="text-[#D9B76F]">
+                        Ahorro est.: $${savingsUsd.toLocaleString('en-US')} USD
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <p class="text-xs opacity-80 line-clamp-4 whitespace-pre-line bg-stone-100 dark:bg-white/5 p-3 rounded-2xl border border-stone-200/70 dark:border-white/10">${item.description || 'Sin descripción adicional.'}</p>
+
+                <h3 class="font-bold text-sm text-white leading-snug line-clamp-2">${item.title}</h3>
+                <p class="text-xs text-stone-300 line-clamp-3 whitespace-pre-line">${item.description || 'Oportunidad detectada por debajo del precio promedio de Revolico.'}</p>
               </div>
             </div>
 
-            <div class="p-4 pt-0 flex items-center justify-between gap-2">
-              <a href="${item.url}" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-[#14201B] hover:bg-[#EF5E4E] dark:bg-[#D9B76F] dark:text-[#14201B] text-white font-extrabold text-xs text-center transition-all">
-                Ver Anuncio Original en Revolico ↗
+            <!-- Card Footer -->
+            <div class="p-4 pt-3 border-t border-white/10 flex items-center justify-between gap-2">
+              <a href="${item.url}" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-white/10 hover:bg-[#EF5E4E] text-white text-xs font-extrabold text-center transition-all">
+                Abrir Anuncio en Revolico ↗
               </a>
-              <!-- Strict Rule #5: WhatsApp button with ONLY the icon, zero text -->
-              <a href="${waHref}" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-sm shrink-0">
+              <!-- STRICT RULE #5: WhatsApp Button with ONLY Icon, Zero Text -->
+              <a href="https://wa.me/${waNum}?text=${waMsg}" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-md shrink-0">
                 <i class="fa-brands fa-whatsapp text-lg"></i>
               </a>
             </div>

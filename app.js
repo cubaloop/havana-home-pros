@@ -4,7 +4,7 @@
  * 20 Real Revolico Houses (> $50,000 USD) with Real Multi-Photo Galleries
  */
 
-const STORAGE_KEY = 'havana_home_pros_state_v1';
+const STORAGE_KEY = 'havana_home_pros_state_v2';
 
 const I18N_DICT = {
   es: {
@@ -32,7 +32,7 @@ const I18N_DICT = {
 
 let hhpState = {
   properties: [],
-  zones: ['Miramar', 'Siboney', 'El Vedado', 'Nuevo Vedado', 'Kohly', 'Playa', 'Centro Histórico'],
+  zones: ['Miramar', 'Siboney', 'El Vedado', 'Nuevo Vedado', 'Atabey', 'Playa', 'Lawton', 'Alturas de La Lisa'],
   favorites: [],
   appointments: [
     {
@@ -58,6 +58,7 @@ let hhpState = {
 let isAdminLogged = false;
 let leafletMap = null;
 let leafletMarkers = [];
+let detailLeafletMap = null;
 
 function loadInitialState() {
   const seed = Array.isArray(window.INITIAL_HOUSES_DATA) ? window.INITIAL_HOUSES_DATA : [];
@@ -452,11 +453,22 @@ function renderPropertyCard(p) {
             ${p.title}
           </h3>
 
-          <!-- Location Pin -->
-          <p class="text-xs text-stone-600 dark:text-stone-300 flex items-center gap-1.5 font-medium">
-            <i class="fa-solid fa-location-dot text-[#EF5E4E]"></i>
-            <span>${p.neighborhood}, ${p.municipality}, La Habana</span>
-          </p>
+          <!-- Location Pin + Property Finder "Ver en Mapa" Action -->
+          <div class="p-2 rounded-xl bg-stone-100/90 dark:bg-white/5 border border-stone-200/80 dark:border-white/10 flex items-center justify-between gap-2">
+            <p class="text-[11px] text-stone-700 dark:text-stone-200 flex items-start gap-1.5 font-semibold leading-tight">
+              <i class="fa-solid fa-location-dot text-[#EF5E4E] mt-0.5 shrink-0"></i>
+              <span class="line-clamp-2">${p.exactAddress || `${p.neighborhood}, ${p.municipality}, La Habana`}</span>
+            </p>
+            <button
+              type="button"
+              onclick="openPropertyDetailModal('${sid}', event, true)"
+              class="px-2 py-1 rounded-lg bg-[#EF5E4E]/15 hover:bg-[#EF5E4E] text-[#EF5E4E] hover:text-white text-[10px] font-extrabold shrink-0 transition-all flex items-center gap-1"
+              title="Ver ubicación en el mapa"
+            >
+              <i class="fa-solid fa-map-pin"></i>
+              <span>Mapa</span>
+            </button>
+          </div>
 
           <!-- Specs Row: Beds | Baths | SqM -->
           <div class="flex items-center gap-4 pt-1 text-xs font-bold text-stone-700 dark:text-stone-200">
@@ -512,7 +524,7 @@ function renderPropertyCard(p) {
   `;
 }
 
-function openPropertyDetailModal(id, e) {
+function openPropertyDetailModal(id, e, scrollToMap = false) {
   if (e) e.stopPropagation();
   const p = hhpState.properties.find(x => String(x.id) === String(id));
   if (!p) return;
@@ -526,19 +538,23 @@ function openPropertyDetailModal(id, e) {
   const waNumber = p.cleanPhone || '971508379080';
   const waText = encodeURIComponent(`Hola, me interesa la propiedad "${p.title}" (${formatUsd(p.priceUsd)}) en Havana Home Pros.`);
   const waHref = `https://wa.me/${waNumber}?text=${waText}`;
+  const exactLoc = p.exactAddress || `${p.neighborhood}, ${p.municipality}, La Habana`;
+  const lat = Number(p.lat || 23.1165);
+  const lng = Number(p.lng || -82.4260);
+  const gmapsHref = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 
   body.innerHTML = `
     <div class="flex items-start justify-between gap-3 border-b border-stone-200 dark:border-white/10 pb-3">
       <div>
         <div class="flex flex-wrap items-center gap-2">
           <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold uppercase">Verificada Havana Home Pros</span>
-          <span class="px-2.5 py-0.5 rounded-full bg-stone-200 dark:bg-white/10 text-[10px] font-bold">${p.propertyType} • Ref #${p.revolicoId || p.id}</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-stone-200 dark:bg-white/10 text-[10px] font-bold">${p.propertyType} • Código #HHP-${String(p.id).slice(-5)}</span>
           <span class="text-[11px] opacity-65">Publicada: ${p.publishedDate || '2026'}</span>
         </div>
         <h2 class="font-display text-lg sm:text-2xl font-bold mt-1">${p.title}</h2>
-        <p class="text-xs text-[#EF5E4E] font-bold flex items-center gap-1 mt-0.5">
+        <p class="text-xs text-[#EF5E4E] font-bold flex items-center gap-1.5 mt-0.5">
           <i class="fa-solid fa-location-dot"></i>
-          <span>${p.neighborhood}, ${p.municipality}, La Habana</span>
+          <span>${exactLoc}</span>
         </p>
       </div>
       <button onclick="closePropertyDetailModal()" class="w-9 h-9 rounded-full bg-stone-200 dark:bg-white/10 font-bold shrink-0">✕</button>
@@ -546,7 +562,7 @@ function openPropertyDetailModal(id, e) {
 
     <!-- Main Photo + Thumbnails Strip -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-      <div class="lg:col-span-8 space-y-2.5">
+      <div class="lg:col-span-8 space-y-3">
         <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden bg-stone-900 border border-stone-200 dark:border-white/10">
           <img id="detail-main-photo" src="${mainImg}" alt="${p.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover" />
         </div>
@@ -579,17 +595,36 @@ function openPropertyDetailModal(id, e) {
           <h4 class="font-display font-bold text-sm">Descripción Completa del Inmueble</h4>
           <p class="text-xs leading-relaxed whitespace-pre-line opacity-90 bg-stone-100/70 dark:bg-white/5 p-3.5 rounded-2xl border border-stone-200/70 dark:border-white/10">${p.description || 'Propiedad verificada en excelente estado constructivo y documentación lista para venta.'}</p>
         </div>
+
+        <!-- PROPERTY FINDER LOCATION & INTERACTIVE MAP SECTION -->
+        <div id="detail-map-section" class="p-4 rounded-2xl bg-stone-100/80 dark:bg-white/5 border border-stone-200 dark:border-white/10 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h4 class="font-display font-bold text-sm flex items-center gap-1.5">
+                <i class="fa-solid fa-map-location-dot text-[#EF5E4E]"></i>
+                <span>Ubicación en el Mapa (Estilo Property Finder)</span>
+              </h4>
+              <p class="text-xs font-bold text-[#7A5A1E] dark:text-[#D9B76F] mt-0.5">${exactLoc}</p>
+            </div>
+            <a href="${gmapsHref}" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-xl bg-[#14201B] hover:bg-[#EF5E4E] text-white text-[11px] font-extrabold transition-all flex items-center gap-1.5">
+              <i class="fa-solid fa-up-right-from-square"></i>
+              <span>Ver en Google Maps</span>
+            </a>
+          </div>
+          <div id="detail-inline-leaflet-map" class="w-full h-64 rounded-2xl overflow-hidden border border-stone-300 dark:border-white/15 z-10"></div>
+        </div>
       </div>
 
-      <!-- Right Column: Price Card, Booking Form & Original Source Link -->
+      <!-- Right Column: Price Card & Booking Form -->
       <div class="lg:col-span-4 space-y-4">
         <div class="p-4 rounded-2xl bg-stone-100 dark:bg-white/5 border border-stone-200 dark:border-white/10 space-y-3">
           <div class="text-xs uppercase font-bold opacity-65">Precio Oficial de Venta</div>
           <div class="font-display font-bold text-2xl sm:text-3xl text-[#EF5E4E]">${formatUsd(p.priceUsd)}</div>
-          <div class="text-[11px] space-y-1 pt-2 border-t border-stone-200 dark:border-white/10">
+          <div class="text-[11px] space-y-1.5 pt-2 border-t border-stone-200 dark:border-white/10">
+            <div>• Ubicación: <strong>${p.neighborhood}, ${p.municipality}</strong></div>
+            <div>• Referencia: <strong>${exactLoc}</strong></div>
             <div>• Anunciante: <strong>${p.contactName || 'Propietario Verificado'}</strong></div>
-            <div>• Modelo Portal: <strong>Publicación Gratis (1% Éxito)</strong></div>
-            ${p.revolicoUrl ? `<div>• <a href="${p.revolicoUrl}" target="_blank" rel="noopener" class="text-[#EF5E4E] underline font-bold">Ver anuncio original en Revolico ↗</a></div>` : ''}
+            <div>• Garantía: <strong>Verificada por Havana Home Pros</strong></div>
           </div>
 
           <div class="flex items-center gap-2 pt-2">
@@ -617,6 +652,44 @@ function openPropertyDetailModal(id, e) {
   `;
 
   modal.classList.remove('hidden');
+
+  // Render Property Finder interactive mini-map inside the modal
+  setTimeout(() => {
+    const mapEl = document.getElementById('detail-inline-leaflet-map');
+    if (mapEl && window.L) {
+      if (detailLeafletMap) {
+        detailLeafletMap.remove();
+        detailLeafletMap = null;
+      }
+      detailLeafletMap = L.map(mapEl).setView([lat, lng], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap • Havana Home Pros'
+      }).addTo(detailLeafletMap);
+
+      L.circle([lat, lng], {
+        color: '#EF5E4E',
+        fillColor: '#EF5E4E',
+        fillOpacity: 0.14,
+        radius: 260
+      }).addTo(detailLeafletMap);
+
+      const priceIcon = L.divIcon({
+        className: 'custom-pf-pin',
+        html: `<div class="price-marker-pin">$${Math.round(Number(p.priceUsd) / 1000)}K USD</div>`,
+        iconSize: [90, 28],
+        iconAnchor: [45, 14]
+      });
+
+      L.marker([lat, lng], { icon: priceIcon })
+        .addTo(detailLeafletMap)
+        .bindPopup(`<strong>${p.title}</strong><br/><span style="color:#EF5E4E;font-weight:700;">${exactLoc}</span>`)
+        .openPopup();
+
+      if (scrollToMap) {
+        document.getElementById('detail-map-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }, 150);
 }
 
 function closePropertyDetailModal() {

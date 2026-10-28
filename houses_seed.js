@@ -2,7 +2,7 @@ window.INITIAL_HOUSES_DATA = [
   {
     "id": "hhp-57092753",
     "revolicoId": "57092753",
-    "title": "Vendo casa",
+    "title": "Propiedad Independiente con 250 m² en Nuevo Vedado (Cerca del Almendares)",
     "priceUsd": 75000,
     "currency": "USD",
     "municipality": "Plaza de la Revolución",
@@ -21,7 +21,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Rosangela Blanco",
     "phone": "+5352584729",
     "cleanPhone": "5352584729",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-57092753",
     "publishedDate": "2026-08-29",
     "images": [
       "assets/houses/house_57092753_1.jpg",
@@ -39,15 +38,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/a07c64d448a48606fe53bc8e9824145f32758214ee958421d2baf42d54060626_detail_desktop.jpg",
       "https://pic.revolico.com/pics/ceab73d8229071a5a7436edfb77c7182a7fc8d416e738f9c250621a7a4931ca0_detail_desktop.jpg"
     ],
-    "lat": 23.12035,
-    "lng": -82.39575,
+    "lat": 23.1118,
+    "lng": -82.4045,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Nuevo Vedado, próximo a las Ruinas del Parque Almendares, Plaza de la Revolución"
   },
   {
     "id": "hhp-57370111",
     "revolicoId": "57370111",
-    "title": "Apartamento totalmente Equipado en Miramar",
+    "title": "Apartamento Capitalista de Puntal Alto en Miramar (Edificio de 2 Aptos)",
     "priceUsd": 80000,
     "currency": "USD",
     "municipality": "Playa",
@@ -64,7 +64,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Agente Inmobiliario",
     "phone": "+5358656636",
     "cleanPhone": "5358656636",
-    "revolicoUrl": "https://www.revolico.com/item/apartamento-totalmente-equipado-en-miramar-57370111",
     "publishedDate": "2026-09-11",
     "images": [
       "assets/houses/house_57370111_1.jpg",
@@ -82,15 +81,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/8cbc8f771c427d97e4337a38a284bdfe0c98539bf1231971309b86e4929d8e09_detail_desktop.jpg",
       "https://pic.revolico.com/pics/c55c6b1e3a999cbedb4271b4d273bba059429c6f1cd13299d7119948341a6c1a_detail_desktop.jpg"
     ],
-    "lat": 23.12445,
-    "lng": -82.43355,
+    "lat": 23.1195,
+    "lng": -82.426,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Miramar (Edificio Capitalista exclusivo de 2 viviendas), Playa"
   },
   {
     "id": "hhp-57396045",
     "revolicoId": "57396045",
-    "title": "‼️SE VENDE APARTAMENTO CONSTRUCCIÓN CAPITALISTA EN MIRAMAR PLAYA UN EDIFICIO DE SOLAMENTE DOS APARTAMENTOS ‼️  🏠primer",
+    "title": "Apartamento Capitalista de 3 Habitaciones y Terraza en Miramar",
     "priceUsd": 75000,
     "currency": "USD",
     "municipality": "Playa",
@@ -107,7 +107,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Lismage Mismau",
     "phone": "+5359803118",
     "cleanPhone": "5359803118",
-    "revolicoUrl": "https://www.revolico.com/item/se-vende-apartamento-construccion-capitalista-en-miramar-playa-un-edificio-de-solamente-dos-apartamentos-primer-57396045",
     "publishedDate": "2026-09-12",
     "images": [
       "assets/houses/house_57396045_1.jpg",
@@ -125,15 +124,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/c39bd936296ed4b73e493cb054b01faa17e180177539bc9cd3d4935c66d824bd_detail_desktop.jpg",
       "https://pic.revolico.com/pics/d16f8761aafb6886106248d114642cf971158142608066ba23ba3c8003d4b78f_detail_desktop.jpg"
     ],
-    "lat": 23.11275,
-    "lng": -82.4367,
+    "lat": 23.121,
+    "lng": -82.422,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Zona Residencial Miramar (Próximo a 5ta Avenida), Municipio Playa"
   },
   {
     "id": "hhp-57403027",
     "revolicoId": "57403027",
-    "title": "Vendo casa de 3 niveles , puerta a calle , en el Cerro cerca de Ayestaran  , tiene kit solar incluido",
+    "title": "Casa Puerta Calle de 3 Niveles con Kit Solar Híbrido 4kW en El Vedado",
     "priceUsd": 55000,
     "currency": "USD",
     "municipality": "Plaza de la Revolución",
@@ -152,7 +152,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Braian García",
     "phone": "+5356542664",
     "cleanPhone": "5356542664",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-de-3-niveles-puerta-a-calle-en-el-cerro-cerca-de-ayestaran-tiene-kit-solar-incluido-57403027",
     "publishedDate": "2026-09-13",
     "images": [
       "assets/houses/house_57403027_1.jpg",
@@ -170,15 +169,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/8b3df2beafe743a6a3b906dbaa81da569fada8b534e024a413f28ed87e2ea1a4_detail_desktop.jpg",
       "https://pic.revolico.com/pics/d79de7188d726395e80adac825ec4f9949372d3ca1f325818e29964ef08d966c_detail_desktop.jpg"
     ],
-    "lat": 23.13415,
-    "lng": -82.3871,
+    "lat": 23.1332,
+    "lng": -82.3865,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "El Vedado Céntrico (Puerta a Calle), Plaza de la Revolución"
   },
   {
     "id": "hhp-57341300",
     "revolicoId": "57341300",
-    "title": "Vendo super casa en guanabo con todo adentro",
+    "title": "Residencia de 6 Habitaciones con Piscina y 2 Garajes a 3 Cuadras del Mar",
     "priceUsd": 160000,
     "currency": "USD",
     "municipality": "Playa",
@@ -195,7 +195,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "manuel cordovez",
     "phone": "+5352726166",
     "cleanPhone": "5352726166",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-super-casa-en-guanabo-con-todo-adentro-57341300",
     "publishedDate": "2026-09-13",
     "images": [
       "assets/houses/house_57341300_1.jpg",
@@ -213,19 +212,20 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/313446d96c3ccc42cbc32fdbc0d8d3a43dac6aff0b0128552c6e4216e48b4842_detail_desktop.jpg",
       "https://pic.revolico.com/pics/9d8f9621528f7930bab6ddc8ab84b5c882b375537f1beb2421a7850d29c89871_detail_desktop.jpg"
     ],
-    "lat": 23.112,
-    "lng": -82.4395,
+    "lat": 23.1165,
+    "lng": -82.441,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Zona Costera de Playa (A 3 cuadras de la playa), La Habana"
   },
   {
     "id": "hhp-57410284",
     "revolicoId": "57410284",
-    "title": "🏡 CASA EN VENTA EN REPARTO ELENA – ALTURAS DE LA LISA, LA HABANA",
+    "title": "Vivienda Independiente de 168 m² en Reparto Elena, Alturas de La Lisa",
     "priceUsd": 50000,
     "currency": "USD",
-    "municipality": "Playa",
-    "neighborhood": "Miramar",
+    "municipality": "La Lisa",
+    "neighborhood": "Alturas de La Lisa",
     "propertyType": "Casa Independiente",
     "bedrooms": 3,
     "bathrooms": 2,
@@ -239,7 +239,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Patricia Hernández",
     "phone": "+5353233596",
     "cleanPhone": "5353233596",
-    "revolicoUrl": "https://www.revolico.com/item/casa-en-venta-en-reparto-elena-alturas-de-la-lisa-la-habana-57410284",
     "publishedDate": "2026-09-13",
     "images": [
       "assets/houses/house_57410284_1.jpg",
@@ -257,15 +256,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/f66006711c60ed89f6453cb78fcad40a869598854949bd09cf61d6cd815d36b0_detail_desktop.jpg",
       "https://pic.revolico.com/pics/154d386f784217bc7902758cabcbe78855bd2dce7bb74fe2e54370b28fb94936_detail_desktop.jpg"
     ],
-    "lat": 23.1123,
-    "lng": -82.4259,
+    "lat": 23.0492,
+    "lng": -82.4565,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Elena, Alturas de La Lisa, La Habana"
   },
   {
     "id": "hhp-57472464",
     "revolicoId": "57472464",
-    "title": "❤️Vendo casa independiente en Siboney 260 mil",
+    "title": "Residencia Independiente de 800 m² con Jardín, Garaje y 3 Terrazas en Siboney",
     "priceUsd": 260000,
     "currency": "USD",
     "municipality": "Playa",
@@ -283,7 +283,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Katherin Figueroa",
     "phone": "+5359163447",
     "cleanPhone": "5359163447",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-independiente-en-siboney-260-mil-57472464",
     "publishedDate": "2026-09-16",
     "images": [
       "assets/houses/house_57472464_1.jpg",
@@ -301,19 +300,20 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/dfd796de7c190333693b139fb0fb333ac54fa28e05024e803666d6fe3611164c_detail_desktop.jpg",
       "https://pic.revolico.com/pics/f666a51dbd6717188c4dde3d5e22b3ac01f81c3af33ad711d773b0feb9487119_detail_desktop.jpg"
     ],
-    "lat": 23.087,
-    "lng": -82.4694,
+    "lat": 23.0842,
+    "lng": -82.4638,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Siboney, Municipio Playa, La Habana"
   },
   {
     "id": "hhp-57495904",
     "revolicoId": "57495904",
-    "title": "Vendo casa y apartamento en una sola propiedad en Luyano",
+    "title": "Casa Puerta Calle con Garaje + Apartamento en Reparto Asunción",
     "priceUsd": 70000,
     "currency": "USD",
-    "municipality": "Playa",
-    "neighborhood": "Miramar",
+    "municipality": "Diez de Octubre",
+    "neighborhood": "Reparto Asunción",
     "propertyType": "Villa / Mansión",
     "bedrooms": 4,
     "bathrooms": 3,
@@ -329,7 +329,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Dianaelis Rojo",
     "phone": "+5355926628",
     "cleanPhone": "5355926628",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-y-apartamento-en-una-sola-propiedad-en-luyano-57495904",
     "publishedDate": "2026-09-17",
     "images": [
       "assets/houses/house_57495904_1.jpg",
@@ -347,15 +346,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/cca4af1c33c06700b63b94fe52b006f2969e1199d79a6734a8e209458878f2bd_detail_desktop.jpg",
       "https://pic.revolico.com/pics/8b90577c6499e55fae64e74c9d30c5c55a45834ae5fae71a34c7309c8962494b_detail_desktop.jpg"
     ],
-    "lat": 23.1198,
-    "lng": -82.4235,
+    "lat": 23.1032,
+    "lng": -82.3612,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Residencial Asunción (Ref. Hospital Miguel Enríquez / Hijas de Galicia), 10 de Octubre"
   },
   {
     "id": "hhp-57511526",
     "revolicoId": "57511526",
-    "title": "Vendo casa en Miramar, Playa ‼️‼️",
+    "title": "Casa de Lujo de 4 Habitaciones con Terreno y Portal en Playa Miramar",
     "priceUsd": 50000,
     "currency": "USD",
     "municipality": "Playa",
@@ -374,7 +374,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Alejandra Miralles García",
     "phone": "+5351575836",
     "cleanPhone": "5351575836",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-en-miramar-playa-57511526",
     "publishedDate": "2026-09-17",
     "images": [
       "assets/houses/house_57511526_1.jpg",
@@ -392,15 +391,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/7b4ac2c8af8b03b8af92a0835443167c774445ea44463879e1048ccdfa184cfb_detail_desktop.jpg",
       "https://pic.revolico.com/pics/c3b4c1b2b83018ad304ecb235ead444f6b8fffd268dc9df78b8cd10ebf503f2d_detail_desktop.jpg"
     ],
-    "lat": 23.1132,
-    "lng": -82.4241,
+    "lat": 23.1142,
+    "lng": -82.4318,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Playa Miramar (Zona Residencial Interior), Municipio Playa"
   },
   {
     "id": "hhp-57571611",
     "revolicoId": "57571611",
-    "title": "Venta de casa en Miramar, Playa ‼️",
+    "title": "Residencia Remodelada de 4 Habitaciones con Placa Libre en Miramar",
     "priceUsd": 50000,
     "currency": "USD",
     "municipality": "Playa",
@@ -419,7 +419,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Alejandra Miralles García",
     "phone": "+5351575836",
     "cleanPhone": "5351575836",
-    "revolicoUrl": "https://www.revolico.com/item/venta-de-casa-en-miramar-playa-57571611",
     "publishedDate": "2026-09-20",
     "images": [
       "assets/houses/house_57571611_1.jpg",
@@ -437,19 +436,20 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/7b4ac2c8af8b03b8af92a0835443167c774445ea44463879e1048ccdfa184cfb_detail_desktop.jpg",
       "https://pic.revolico.com/pics/c3b4c1b2b83018ad304ecb235ead444f6b8fffd268dc9df78b8cd10ebf503f2d_detail_desktop.jpg"
     ],
-    "lat": 23.11545,
-    "lng": -82.43805,
+    "lat": 23.1105,
+    "lng": -82.4355,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Miramar, Municipio Playa, La Habana"
   },
   {
     "id": "hhp-57545643",
     "revolicoId": "57545643",
-    "title": "Vendo casa",
+    "title": "Residencia de 408 m² con Piscina, Isla de Mármol y Carpoch en Ave. Concepción",
     "priceUsd": 100000,
     "currency": "USD",
-    "municipality": "Playa",
-    "neighborhood": "Miramar",
+    "municipality": "Diez de Octubre",
+    "neighborhood": "Lawton",
     "propertyType": "Villa / Mansión",
     "bedrooms": 4,
     "bathrooms": 3,
@@ -464,7 +464,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Rene Riera",
     "phone": "+5353826896",
     "cleanPhone": "5353826896",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-57545643",
     "publishedDate": "2026-09-23",
     "images": [
       "assets/houses/house_57545643_1.jpg",
@@ -482,15 +481,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/c3b8cc6babb9d1cc0f394a8688d54da7b3296fcfdb1a8224c74cbbdc8256136c_detail_desktop.jpg",
       "https://pic.revolico.com/pics/f88a741a871c3720c43d6395ca07bc6e4d57aa45731b1b386f77f8cb9f12022f_detail_desktop.jpg"
     ],
-    "lat": 23.11035,
-    "lng": -82.4352,
+    "lat": 23.0915,
+    "lng": -82.3568,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Avenida Concepción, Reparto Lawton, Diez de Octubre"
   },
   {
     "id": "hhp-49678276",
     "revolicoId": "49678276",
-    "title": "Casa 5/4, garaje, terreno, Siboney, Playa (P-53)",
+    "title": "Mansión Capitalista de 950 m² (5 Hab / 4 Baños) cerca de 216 y 7ma A, Siboney",
     "priceUsd": 400000,
     "currency": "USD",
     "municipality": "Playa",
@@ -504,11 +504,10 @@ window.INITIAL_HOUSES_DATA = [
       "Garaje / Carpoch",
       "Jardín & Terraza"
     ],
-    "description": "$400000.00 \n\nCasa 5/4, garaje, terreno, Siboney, Playa (P-53)\n\nSe vende casa de dos plantas de construcción capitalista que consta de:\n\nPlanta baja: jardín, acceso vehicular, garaje, portal, sala, comedor, sala de estar, cocina, dormitorio, dos baños, terraza techada, pasillo interior, escalera a planta alta, dos pasillos exteriores laterales, patio exterior sin techar y de tierra.\n\nPlanta alta: caja de escalera, pasillo interior, cuatro dormitorios, dos baños (uno en el pasillo y el otro en una habitación), terraza sin techar.\n\nCerca de 216 y 7ma A.\n950m² \n\nPara ver más fotos y detalles acceder a través de: \nhttps://www.aleidapropiedades.com/index.php?idprop=45820\n\nPueden contactar con Aleida Propiedades, de lunes a viernes de 9:30am a 5:30pm, a través de:\n\n- Teléfono Móvil y WhatsApp: 05 3853006\n- Email: ventas@aleidapropiedades.com\n- Sitio web de Aleida Propiedades: https://aleidapropiedades.com",
+    "description": "$400000.00 \n\nCasa 5/4, garaje, terreno, Siboney, Playa (P-53)\n\nSe vende casa de dos plantas de construcción capitalista que consta de:\n\nPlanta baja: jardín, acceso vehicular, garaje, portal, sala, comedor, sala de estar, cocina, dormitorio, dos baños, terraza techada, pasillo interior, escalera a planta alta, dos pasillos exteriores laterales, patio exterior sin techar y de tierra.\n\nPlanta alta: caja de escalera, pasillo interior, cuatro dormitorios, dos baños (uno en el pasillo y el otro en una habitación), terraza sin techar.\n\nCerca de 216 y 7ma A.\n950m²",
     "contactName": "Aleida Propiedades",
     "phone": "+5353853006",
     "cleanPhone": "5353853006",
-    "revolicoUrl": "https://www.revolico.com/item/casa-54-garaje-terreno-siboney-playa-p-53-49678276",
     "publishedDate": "2026-09-26",
     "images": [
       "assets/houses/house_49678276_1.jpg",
@@ -526,19 +525,20 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/c0d0283143df63094b7f4f8047e0d149492b59c6021e6f9b2349e2c123d3b5cc_detail_desktop.jpg",
       "https://pic.revolico.com/pics/9f27f4aed03c40c230563069ac04c76d172186e57245ea4be273e08a11f7f273_detail_desktop.jpg"
     ],
-    "lat": 23.0924,
-    "lng": -82.45995,
+    "lat": 23.0815,
+    "lng": -82.4682,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Próximo a Calle 216 y 7ma A, Reparto Siboney, Municipio Playa"
   },
   {
     "id": "hhp-57787619",
     "revolicoId": "57787619",
-    "title": "Vendo casa independiente colonial de construcción capitalista en playa (Ampliación de Almendares)en prefecto estado Cons",
+    "title": "Casa Independiente Capitalista de 5 Hab y Patio de 150 m² en Ampliación de Almendares",
     "priceUsd": 50000,
     "currency": "USD",
     "municipality": "Playa",
-    "neighborhood": "Playa",
+    "neighborhood": "Ampliación de Almendares",
     "propertyType": "Casa Independiente",
     "bedrooms": 5,
     "bathrooms": 4,
@@ -551,7 +551,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Propietario Verificado",
     "phone": "+5359680353",
     "cleanPhone": "5359680353",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-independiente-colonial-de-construccion-capitalista-en-playa-ampliacion-de-almendaresen-prefecto-estado-cons-57787619",
     "publishedDate": "2026-09-30",
     "images": [
       "assets/houses/house_57787619_1.jpg",
@@ -569,15 +568,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/7c96a38ce7d7192c87080f2f2b2ee4e1b408df18cfb5b0d2afd03217a1cf5e6d_detail_desktop.jpg",
       "https://pic.revolico.com/pics/7d78e2fdc03e5d9aec637360a080bc54697d43b7c6032ebd1c3a53a50c9fb5ac_detail_desktop.jpg"
     ],
-    "lat": 23.11155,
-    "lng": -82.44355,
+    "lat": 23.1065,
+    "lng": -82.422,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "A media cuadra de Avenida 19, Ampliación de Almendares, Municipio Playa"
   },
   {
     "id": "hhp-57787816",
     "revolicoId": "57787816",
-    "title": "Casa en Miramar 50 mil negociable",
+    "title": "Apartamento Capitalista en Planta Baja con Garaje próximo a La Copa, Miramar",
     "priceUsd": 50000,
     "currency": "USD",
     "municipality": "Playa",
@@ -591,11 +591,10 @@ window.INITIAL_HOUSES_DATA = [
       "Garaje / Carpoch",
       "Jardín & Terraza"
     ],
-    "description": "🏡 VENDO MARAVILLOSO APARTAMENTO EN MIRAMAR \n\n Ubicación estratégica: Reparto Miramar, Municipio Playa (Próximo al Centro Comercial La Copa).\n💵 Precio: $50,000 USD\n🏛️ Construcción Capitalista (1950)\n📐 Superficie útil: 66.86 m²\n🔽 Altura: Planta baja (muy cómodo y accesible)\n🛋️ Distribución:\n• Sala - comedor amplia y luminosa\n• Hall distribuidor\n• 2 Habitaciones principales\n• 1 Habitación de uso múltiple (estudio, vestidor o pequeña habitación)\n• Cocina independiente\n• 1 Baño completo\n• Patio de servicio\n• 🚗 Garaje incluido\n• ⛽ Gas de la calle\n📲 Para más información o agendar una visita:\n☎️ WhatsApp / Teléfono: +53 59163447\n📩 O escríbenos directamente al privado.\nhttps://www.facebook.com/share/19aPpPpEPk/\n\n#CasasEnCuba #casashabana #CasasEnLaHabana #ventadecasas #Ventadecasasencuba",
+    "description": "🏡 VENDO MARAVILLOSO APARTAMENTO EN MIRAMAR \n\n Ubicación estratégica: Reparto Miramar, Municipio Playa (Próximo al Centro Comercial La Copa).\n💵 Precio: $50,000 USD\n🏛️ Construcción Capitalista (1950)\n📐 Superficie útil: 66.86 m²\n🔽 Altura: Planta baja (muy cómodo y accesible)\n🛋️ Distribución:\n• Sala - comedor amplia y luminosa\n• Hall distribuidor\n• 2 Habitaciones principales\n• 1 Habitación de uso múltiple (estudio, vestidor o pequeña habitación)\n• Cocina independiente\n• 1 Baño completo\n• Patio de servicio\n• 🚗 Garaje incluido\n• ⛽ Gas de la calle\n📲 Para más información o agendar una visita:\n☎️ WhatsApp / Teléfono: +53 59163447\n📩 O escríbenos directamente al privado.\n\n\n#CasasEnCuba #casashabana #CasasEnLaHabana #ventadecasas #Ventadecasasencuba",
     "contactName": "Katherin Figueroa",
     "phone": "+5359163447",
     "cleanPhone": "5359163447",
-    "revolicoUrl": "https://www.revolico.com/item/casa-en-miramar-50-mil-negociable-57787816",
     "publishedDate": "2026-09-30",
     "images": [
       "assets/houses/house_57787816_1.jpg",
@@ -613,15 +612,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/3f39e7aa8eb44488e8cc9258614b21b7583c2908b1c66e55f855fb726a7cbfa8_detail_desktop.jpg",
       "https://pic.revolico.com/pics/e51f1b48224728f3ae2fbea41460ebecb0126a696f55ebb57fe94a533264b346_detail_desktop.jpg"
     ],
-    "lat": 23.1177,
-    "lng": -82.42905,
+    "lat": 23.1155,
+    "lng": -82.4385,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Próximo al Centro Comercial La Copa (Av. 42), Reparto Miramar, Playa"
   },
   {
     "id": "hhp-57798294",
     "revolicoId": "57798294",
-    "title": "Se vende casa súper amplia en Siboney Playa de más de 1000 m/2 a su alrededor",
+    "title": "Mansión Independiente de 1,000 m² con Piscina, Planta 6500W y Auto Eléctrico en Siboney",
     "priceUsd": 650000,
     "currency": "USD",
     "municipality": "Playa",
@@ -642,7 +642,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Yasell Prendes Betancourt",
     "phone": "+5350533000",
     "cleanPhone": "5350533000",
-    "revolicoUrl": "https://www.revolico.com/item/se-vende-casa-super-amplia-en-siboney-playa-de-mas-de-1000-m2-a-su-alrededor-57798294",
     "publishedDate": "2026-09-30",
     "images": [
       "assets/houses/house_57798294_1.jpg",
@@ -656,15 +655,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/71c782bb9bd537e1c4bc019e6870fb73b8786663014eccf78b102a97f44bd732_detail_desktop.jpg",
       "https://pic.revolico.com/pics/1eb18c78f528cd10cc5f381147b4590dfdaba5fa41c23b758842af26911a5fc6_detail_desktop.jpg"
     ],
-    "lat": 23.0825,
-    "lng": -82.45905,
+    "lat": 23.0858,
+    "lng": -82.461,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Siboney (Zona Residencial Embajadas), Municipio Playa"
   },
   {
     "id": "hhp-57128833",
     "revolicoId": "57128833",
-    "title": "Vendo casa en 1er piso de biplanta en el Vedado, zona alta, 2 terrazas",
+    "title": "Residencia Biplanta Independiente con Vista a Calle 27 y Paseo, El Vedado",
     "priceUsd": 75000,
     "currency": "USD",
     "municipality": "Plaza de la Revolución",
@@ -682,7 +682,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Anar Janet RODRIGUEZ CHEANG",
     "phone": "+5352930601",
     "cleanPhone": "5352930601",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-en-1er-piso-de-biplanta-en-el-vedado-zona-alta-2-terrazas-57128833",
     "publishedDate": "2026-09-30",
     "images": [
       "assets/houses/house_57128833_1.jpg",
@@ -700,15 +699,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/da510ad25a16530e4d9da7a49efd8f5f1bcfdab556ef0039a21581ea6f7d3af4_detail_desktop.jpg",
       "https://pic.revolico.com/pics/4b66968139e18aabc4287c4b0d2bdc3d058a6b83181c05a0b412c32e0ca94dc3_detail_desktop.jpg"
     ],
-    "lat": 23.14085,
-    "lng": -82.39965,
+    "lat": 23.1245,
+    "lng": -82.3915,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Calle 27 y Avenida Paseo (Zona Alta / Parte de las Letras), El Vedado, Plaza"
   },
   {
     "id": "hhp-57808827",
     "revolicoId": "57808827",
-    "title": "❤️ Venta de casa independiente en Siboney",
+    "title": "Propiedad Independiente de 800 m² con Jardín, Carpoch y 3 Terrazas en Siboney",
     "priceUsd": 260000,
     "currency": "USD",
     "municipality": "Playa",
@@ -726,7 +726,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Katherin Figueroa",
     "phone": "+5359163447",
     "cleanPhone": "5359163447",
-    "revolicoUrl": "https://www.revolico.com/item/venta-de-casa-independiente-en-siboney-57808827",
     "publishedDate": "2026-10-01",
     "images": [
       "assets/houses/house_57808827_1.jpg",
@@ -744,19 +743,20 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/0c65c63974c4a0cc79d5f9992b2889be393bff8fb8967eaaddf114b52ca89aac_detail_desktop.jpg",
       "https://pic.revolico.com/pics/6d034e218ffebebbe932e20bbadc78896f855260a2b4d65f5823f05a874a5a78_detail_desktop.jpg"
     ],
-    "lat": 23.08835,
-    "lng": -82.4712,
+    "lat": 23.083,
+    "lng": -82.4655,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Avenida 19, Reparto Siboney, Municipio Playa"
   },
   {
     "id": "hhp-58036240",
     "revolicoId": "58036240",
-    "title": "Vendo casa 2 niveles en Atabey, Playa. Placa libre, cisterna propia",
+    "title": "Residencia Independiente de 2 Niveles con Jardín y Garaje en Reparto Atabey",
     "priceUsd": 95000,
     "currency": "USD",
     "municipality": "Playa",
-    "neighborhood": "Playa",
+    "neighborhood": "Atabey",
     "propertyType": "Villa / Mansión",
     "bedrooms": 3,
     "bathrooms": 1,
@@ -771,7 +771,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Yasser Gálvez",
     "phone": "+5359691178",
     "cleanPhone": "5359691178",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-2-niveles-en-atabey-playa-placa-libre-cisterna-propia-58036240",
     "publishedDate": "2026-10-10",
     "images": [
       "assets/houses/house_58036240_1.jpg",
@@ -789,19 +788,20 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/56e2e530a89f5f79500e8e69f3509fa8a02e4a77676fbac40abf7c179deac2d2_detail_desktop.jpg",
       "https://pic.revolico.com/pics/1a04d15eb5515f0257aaa4eaa94fc5140bc3de7cad30b6eaf613a3ae69a7625a_detail_desktop.jpg"
     ],
-    "lat": 23.103,
-    "lng": -82.4332,
+    "lat": 23.0885,
+    "lng": -82.448,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Reparto Residencial Atabey, Municipio Playa, La Habana"
   },
   {
     "id": "hhp-58155604",
     "revolicoId": "58155604",
-    "title": "Vendo Casa en 10 de octubre (lawton) . M",
+    "title": "Casa de 200 m² con Terraza Techada, Carpoch y Cisterna en Lawton",
     "priceUsd": 60000,
     "currency": "USD",
-    "municipality": "Playa",
-    "neighborhood": "Miramar",
+    "municipality": "Diez de Octubre",
+    "neighborhood": "Lawton",
     "propertyType": "Casa Independiente",
     "bedrooms": 3,
     "bathrooms": 2,
@@ -814,7 +814,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Agente Inmobiliario",
     "phone": "+5358656636",
     "cleanPhone": "5358656636",
-    "revolicoUrl": "https://www.revolico.com/item/vendo-casa-en-10-de-octubre-lawton-m-58155604",
     "publishedDate": "2026-10-15",
     "images": [
       "assets/houses/house_58155604_1.jpg",
@@ -832,15 +831,16 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/2d6d97470de9eaee83249bc1ca789ef076881d8cbe6817b721bcc9ff109e21f8_detail_desktop.jpg",
       "https://pic.revolico.com/pics/03a6190df899c47204e46db96082f719ba6e0a9b10f8c3bde0612d5586a83663_detail_desktop.jpg"
     ],
-    "lat": 23.1108,
-    "lng": -82.437,
+    "lat": 23.0938,
+    "lng": -82.364,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "A 3 cuadras de la Calzada de 10 de Octubre, Reparto Lawton, Diez de Octubre"
   },
   {
     "id": "hhp-58158271",
     "revolicoId": "58158271",
-    "title": "Casa independiente en Siboney",
+    "title": "Residencia Capitalista de 4 Habitaciones y Gran Terreno en Reparto Siboney",
     "priceUsd": 260000,
     "currency": "USD",
     "municipality": "Playa",
@@ -858,7 +858,6 @@ window.INITIAL_HOUSES_DATA = [
     "contactName": "Katherin Figueroa",
     "phone": "+5359163447",
     "cleanPhone": "5359163447",
-    "revolicoUrl": "https://www.revolico.com/item/casa-independiente-en-siboney-58158271",
     "publishedDate": "2026-10-15",
     "images": [
       "assets/houses/house_58158271_1.jpg",
@@ -876,9 +875,11 @@ window.INITIAL_HOUSES_DATA = [
       "https://pic.revolico.com/pics/994e9f2e2418273bee898bebb3db2bc9f6b7c1931726c6d6bd04451c896d9d6d_detail_desktop.jpg",
       "https://pic.revolico.com/pics/6d034e218ffebebbe932e20bbadc78896f855260a2b4d65f5823f05a874a5a78_detail_desktop.jpg"
     ],
-    "lat": 23.09015,
-    "lng": -82.45995,
+    "lat": 23.087,
+    "lng": -82.459,
     "verified": true,
-    "commissionModel": "1% Comisión Éxito"
+    "commissionModel": "1% Comisión Éxito",
+    "exactAddress": "Zona Diplomática de Siboney, Municipio Playa, La Habana"
   }
 ];
+window.HAVANA_HOME_PROS_SEED = window.INITIAL_HOUSES_DATA;

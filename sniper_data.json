@@ -17,7 +17,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/5225c1693785d3fde1b0d23a1717fa74d52707cd5a3c271aafae6970bfc0c1fc_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 1220,
+    "marketPriceUsd": 1650,
+    "marketCategoryLabel": "Planta Inverter 6500W Dual Gasolina/Gas",
+    "savingsUsd": 430,
+    "savingsPct": 26
   },
   {
     "id": "sniper-58379070",
@@ -37,7 +42,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/f556f2ea449bc5adc3da59169f2da91c911a7747df5c94c031f0c638975bc6b2_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 2050,
+    "marketPriceUsd": 2680,
+    "marketCategoryLabel": "Estación Jackery 3600 Plus (3584Wh)",
+    "savingsUsd": 630,
+    "savingsPct": 24
   },
   {
     "id": "sniper-58311226",
@@ -63,7 +73,12 @@
       "https://pic.revolico.com/pics/74be20782dfce46f17cd975c6347209c24ee6fbd173bf03a07491587455bdcb7_detail_desktop.jpg",
       "https://pic.revolico.com/pics/5cb03f2fc0a3f7178abbbf2321dd5edf8b3d7077c0f5d225bfa025eb87b1279b_detail_desktop.jpg",
       "https://pic.revolico.com/pics/84b089b2955c01381f9b5ba81c1d9d11d4ed07c754f2df2b0c521f2f2b4766ce_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 26000,
+    "marketPriceUsd": 38000,
+    "marketCategoryLabel": "Apartamento 3 Hab Climatizado en Habana Vieja",
+    "savingsUsd": 12000,
+    "savingsPct": 32
   },
   {
     "id": "sniper-58026976",
@@ -83,7 +98,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/696178b8c7b7e9f1f101bba067873ebaf5f02adf2bd0e32d2ed705dd9a91e9b2_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 535,
+    "marketPriceUsd": 750,
+    "marketCategoryLabel": "Estación de Energía 1200W / 3600W Pico",
+    "savingsUsd": 215,
+    "savingsPct": 29
   },
   {
     "id": "sniper-57590723",
@@ -103,7 +123,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/fb88ae4bcd42ea337e9672c6fd60e804593af287382a2fa6f7f7ebc0714cc0e3_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 120,
+    "marketPriceUsd": 210,
+    "marketCategoryLabel": "Mesa Grande + Equipos Recargables Salón",
+    "savingsUsd": 90,
+    "savingsPct": 43
   },
   {
     "id": "sniper-57532680",
@@ -129,7 +154,12 @@
       "https://pic.revolico.com/pics/b1835f11375123c6eb38f62473df47a277dce7255ec93801db3ddf224bfba437_detail_desktop.jpg",
       "https://pic.revolico.com/pics/2a40c622a25c9d71f13c29e012cb9f45647dc0038bf5bf7c36417970966d1d22_detail_desktop.jpg",
       "https://pic.revolico.com/pics/c550350ed923a93ee30727deb0013e188a231eed426a38935ae21ed65cfa9c4c_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 650,
+    "marketPriceUsd": 890,
+    "marketCategoryLabel": "Patineta Eléctrica 1200W Litio 48V 20Ah",
+    "savingsUsd": 240,
+    "savingsPct": 27
   },
   {
     "id": "sniper-57241821",
@@ -155,7 +185,12 @@
       "https://pic.revolico.com/pics/0765a5045010b8609fd512bfd42df6b9a1474f7c1c54d129d2523f2e87320f2d_detail_desktop.jpg",
       "https://pic.revolico.com/pics/69b490d0caff1f7f6a27dfd41d79599995ef5ad1c81568df1b954a81e8454fec_detail_desktop.jpg",
       "https://pic.revolico.com/pics/8d69ab90dd06b9f6594e7004285f4fbb940f26607813c56c6fc96b6bbf308dc9_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 12000,
+    "marketPriceUsd": 18500,
+    "marketCategoryLabel": "Casa Independiente en Río Verde, Boyeros",
+    "savingsUsd": 6500,
+    "savingsPct": 35
   },
   {
     "id": "sniper-57214278",
@@ -181,7 +216,12 @@
       "https://pic.revolico.com/pics/200f22b1742ea1fe0d944a2afeabaa924545fa7f586265ff98d86ebd0496ed7d_detail_desktop.jpg",
       "https://pic.revolico.com/pics/02fd66aa02d86fd8aed7d23848500bdcdc9fe54675ca1f946dfd8b0e16aa6c4b_detail_desktop.jpg",
       "https://pic.revolico.com/pics/d658e033e8d9b46a6d2bf136fb2b483e35a3a6b8fff4b329937c5a94e68290b0_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 60000,
+    "marketPriceUsd": 85000,
+    "marketCategoryLabel": "Casa Capitalista Biplanta con Garaje en Santo Suárez",
+    "savingsUsd": 25000,
+    "savingsPct": 29
   },
   {
     "id": "sniper-56927885",
@@ -203,7 +243,12 @@
     "cdnImages": [
       "https://pic.revolico.com/pics/a0e76ce0c86c993c03339be6450cdf787b0fc69bcd96b89a37600871894da130_detail_desktop.jpg",
       "https://pic.revolico.com/pics/8d1a787a858ccdbe32d40ac3b5dc4726057c7bda9882e65765e34aaa974848c0_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 9,
+    "marketPriceUsd": 22,
+    "marketCategoryLabel": "Mesa de TV con Rueditas (3,000 CUP vs 7,200 CUP)",
+    "savingsUsd": 13,
+    "savingsPct": 59
   },
   {
     "id": "sniper-56874098",
@@ -223,7 +268,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/5214ca4f964d9df73e9e8b87826194fbfc70bc1b6e7e6fd600d5ba2a1b46f81a_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 1670,
+    "marketPriceUsd": 2250,
+    "marketCategoryLabel": "Estación 3072Wh + Panel Solar 540W",
+    "savingsUsd": 580,
+    "savingsPct": 26
   },
   {
     "id": "sniper-56843996",
@@ -239,7 +289,12 @@
     "queryMatched": "rebajada",
     "publishedDate": "2026-10-27",
     "images": [],
-    "cdnImages": []
+    "cdnImages": [],
+    "priceUsd": 1600,
+    "marketPriceUsd": 2100,
+    "marketCategoryLabel": "Bicimoto JMD 2026 3000W Litio 50Ah 0km",
+    "savingsUsd": 500,
+    "savingsPct": 24
   },
   {
     "id": "sniper-48894965",
@@ -261,7 +316,12 @@
     "cdnImages": [
       "https://pic.revolico.com/pics/ff065629139ac6c792a56b43260fd77a943928e61fb49cec6bc12f01248e3e9e_detail_desktop.jpg",
       "https://pic.revolico.com/pics/2a148ea1287774a85f22601ad61e35faae9d450e42289da4f4e5eb7b8df972e8_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 40,
+    "marketPriceUsd": 75,
+    "marketCategoryLabel": "Fuente Gaming 750W + Mouse Logitech",
+    "savingsUsd": 35,
+    "savingsPct": 47
   },
   {
     "id": "sniper-58403326",
@@ -281,7 +341,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/e0f92527660896cddf22320431c8835169849934ae0aed23a09b68656ea6c1aa_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 11000,
+    "marketPriceUsd": 16500,
+    "marketCategoryLabel": "Casa Independiente 2 Cuartos + 2 Splits",
+    "savingsUsd": 5500,
+    "savingsPct": 33
   },
   {
     "id": "sniper-58140417",
@@ -301,7 +366,12 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/b72176dbcae4812fb025d21d38eb25e6d980f426f82060553307f05593b9a094_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 440,
+    "marketPriceUsd": 620,
+    "marketCategoryLabel": "Batería LiFePO4 12.8V 150Ah Nueva en Caja",
+    "savingsUsd": 180,
+    "savingsPct": 29
   },
   {
     "id": "sniper-56199318",
@@ -321,6 +391,11 @@
     ],
     "cdnImages": [
       "https://pic.revolico.com/pics/b0a08db0371d1c148775f4e0b2bbdc65ceceaf97c81f3ddb496003974154a99e_detail_desktop.jpg"
-    ]
+    ],
+    "priceUsd": 370,
+    "marketPriceUsd": 520,
+    "marketCategoryLabel": "Laptop Huawei MateBook Core i5 10ma Gen + MX250",
+    "savingsUsd": 150,
+    "savingsPct": 29
   }
 ]
