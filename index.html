@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Havana Home Pros | Portal Inmobiliario Líder en Cuba — Casas Verificadas desde $50K USD</title>
+  <meta name="description" content="Havana Home Pros: El portal inmobiliario estilo Property Finder en Cuba. Compra y vende casas independientes, mansiones en Miramar, Siboney y El Vedado con publicación 100% gratuita (solo 1% de comisión al venderse)." />
+
+  <!-- Google Fonts: Fraunces, Plus Jakarta Sans & Amiri (RTL Arabic support) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Leaflet Interactive Map CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'Amiri', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          colors: {
+            pf: {
+              red: '#EF5E4E',
+              redDark: '#D94636',
+              navy: '#14201B',
+              ivory: '#F6F1E7',
+              surface: '#FFFDF8',
+              brass: '#7A5A1E',
+              brassLight: '#D9B76F',
+              darkBg: '#09100D',
+              darkSurface: '#121D18',
+              darkInk: '#F2EDE0'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F6F1E7;
+      color: #14201B;
+      overflow-x: hidden;
+    }
+    html.dark body {
+      background-color: #09100D;
+      color: #F2EDE0;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .pf-shadow {
+      box-shadow: 0 10px 30px -8px rgba(20, 32, 27, 0.08), 0 4px 12px -2px rgba(20, 32, 27, 0.04);
+    }
+    .pf-card-hover {
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .pf-card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px -10px rgba(20, 32, 27, 0.14);
+    }
+    .leaflet-popup-content-wrapper {
+      border-radius: 16px !important;
+      padding: 2px !important;
+    }
+    .price-marker-pin {
+      background: #EF5E4E;
+      color: #fff;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      white-space: nowrap;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#EF5E4E] selection:text-white">
+
+  <!-- TOP TRUST & B2B BANNER (1% COMMISSION MODEL) -->
+  <div class="bg-[#14201B] text-[#F2EDE0] text-[11px] py-2 px-4 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded-full bg-[#EF5E4E] text-white font-extrabold text-[10px] uppercase tracking-wider">Property Finder Cuba</span>
+        <span data-i18n="top_banner_text" class="font-medium">
+          ¿Tienes una casa en venta en Cuba? <strong>Publícala 100% GRATIS</strong> en Havana Home Pros — Solo cobramos el <strong>1% de comisión</strong> si la vendemos a través de nuestro portal.
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Star Rating Social Proof Linking to Google Maps -->
+        <a href="https://www.google.com/maps/search/Havana+Real+Estate+Miramar+Playa+Cuba" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[#D9B76F] hover:underline font-semibold">
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <span>4.9 ★ (148 Reseñas Google Maps)</span>
+        </a>
+        <a href="sniper.html" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 text-[#D9B76F] font-bold transition-all" title="Panel Privado de Oportunidades para David">
+          <i class="fa-solid fa-crosshairs"></i>
+          <span>Radar Sniper</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPERTY FINDER STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-[#FFFDF8]/95 dark:bg-[#121D18]/95 backdrop-blur-md border-b border-stone-200/80 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+      <!-- Brand Logo (Property Finder Style) -->
+      <a href="#top" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#EF5E4E] to-[#7A5A1E] text-white flex items-center justify-center shadow-md">
+          <i class="fa-solid fa-house-chimney-window text-lg"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-[#14201B] dark:text-[#F2EDE0]">Havana Home</span>
+            <span class="px-1.5 py-0.5 rounded-md bg-[#EF5E4E] text-white font-extrabold text-xs tracking-wide">PROS</span>
+          </div>
+          <span class="block text-[10px] font-semibold uppercase tracking-widest text-[#7A5A1E] dark:text-[#D9B76F]">Cuba Real Estate Finder</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (Property Finder Tabs) -->
+      <nav class="hidden lg:flex items-center gap-1 text-xs font-bold">
+        <button onclick="setMainTab('BUY')" id="nav-tab-BUY" class="js-nav-tab px-3.5 py-2 rounded-xl bg-[#EF5E4E]/10 text-[#EF5E4E] transition-all">
+          Comprar (<span id="nav-total-count">20</span>)
+        </button>
+        <button onclick="setMainTab('LUXURY')" id="nav-tab-LUXURY" class="js-nav-tab px-3.5 py-2 rounded-xl hover:bg-stone-200/60 dark:hover:bg-white/5 transition-all">
+          Mansiones &amp; +$150K
+        </button>
+        <button onclick="setMainTab('OFFGRID')" id="nav-tab-OFFGRID" class="js-nav-tab px-3.5 py-2 rounded-xl hover:bg-stone-200/60 dark:hover:bg-white/5 transition-all">
+          Respaldo Solar / Piscina
+        </button>
+        <button onclick="toggleMapSplitView()" id="nav-tab-MAP" class="px-3.5 py-2 rounded-xl hover:bg-stone-200/60 dark:hover:bg-white/5 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-map-location-dot text-[#EF5E4E]"></i>
+          <span>Explorar en Mapa</span>
+        </button>
+        <button onclick="filterFavoritesOnly()" id="nav-tab-FAV" class="px-3.5 py-2 rounded-xl hover:bg-stone-200/60 dark:hover:bg-white/5 transition-all flex items-center gap-1.5">
+          <i class="fa-regular fa-heart text-[#EF5E4E]"></i>
+          <span>Guardadas (<span id="fav-counter-badge">0</span>)</span>
+        </button>
+      </nav>
+
+      <!-- Right Controls: Language, Theme, Publish Free (1%), Admin Gold Pill, WhatsApp Icon-Only -->
+      <div class="flex items-center gap-2">
+        <!-- Language Switcher (ES / EN / AR) -->
+        <select id="lang-switcher" onchange="changeLanguage(this.value)" aria-label="Idioma" class="hidden sm:block px-2.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 border border-stone-300/80 dark:border-white/15 text-xs font-bold cursor-pointer">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="ar">AR</option>
+        </select>
+
+        <!-- Dual Theme Toggle -->
+        <button onclick="toggleTheme()" class="w-9 h-9 rounded-xl bg-stone-100 dark:bg-white/10 border border-stone-300/80 dark:border-white/15 flex items-center justify-center text-sm hover:border-[#7A5A1E] transition-all" aria-label="Cambiar tema">
+          <i id="theme-icon" class="fa-solid fa-moon text-[#7A5A1E] dark:text-[#D9B76F]"></i>
+        </button>
+
+        <!-- Golden Admin Pill (Unlocked after Admin Login) -->
+        <button id="header-admin-gold-pill" onclick="openAdminModal()" class="hidden px-3 py-1.5 rounded-full bg-gradient-to-r from-[#7A5A1E] to-[#D9B76F] text-white text-xs font-extrabold shadow-md items-center gap-1.5">
+          <i class="fa-solid fa-crown"></i>
+          <span class="hidden sm:inline">Admin Panel</span>
+        </button>
+
+        <!-- Publish Property Free (1% Commission) Button -->
+        <button onclick="openPublishPropertyModal()" class="px-3.5 py-2 rounded-full bg-[#EF5E4E] hover:bg-[#D94636] text-white text-xs font-extrabold shadow-sm transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-plus"></i>
+          <span data-i18n="btn_publish_free">Publicar Gratis (1%)</span>
+        </button>
+
+        <!-- Admin Lock Icon -->
+        <button onclick="openAdminModal()" class="w-9 h-9 rounded-xl bg-stone-100 dark:bg-white/10 border border-stone-300/80 dark:border-white/15 flex items-center justify-center text-xs hover:border-[#7A5A1E]" title="Panel de Administración">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+
+        <!-- WhatsApp Header Button: STRICT RULE #5 (ONLY ICON, ZERO TEXT) -->
+        <a href="https://wa.me/971508379080" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-sm transition-all">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+        </a>
+
+        <!-- Mobile Drawer Button -->
+        <button onclick="toggleMobileDrawer(true)" class="lg:hidden w-9 h-9 rounded-xl bg-stone-100 dark:bg-white/10 border border-stone-300/80 dark:border-white/15 flex items-center justify-center" aria-label="Menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROPERTY FINDER HERO & MULTI-CRITERIA SEARCH BAR -->
+  <section id="top" class="relative bg-gradient-to-b from-[#14201B] via-[#1B2A23] to-[#14201B] text-[#F2EDE0] py-7 sm:py-10 px-4 border-b border-[#7A5A1E]/30">
+    <div class="max-w-7xl mx-auto space-y-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D9B76F]/15 border border-[#D9B76F]/40 text-[#D9B76F] text-[11px] font-bold mb-2">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>20+ Propiedades Reales Verificadas en La Habana (+$50,000 USD)</span>
+          </div>
+          <h1 data-i18n="hero_title" class="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white">
+            Encuentra tu próxima propiedad en Cuba
+          </h1>
+          <p data-i18n="hero_subtitle" class="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl">
+            Búsqueda avanzada estilo Property Finder con fotos reales verificadas, filtros por reparto, habitaciones, rango de precio en USD y publicación gratuita para propietarios (solo 1% al venderse).
+          </p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="flex items-center gap-3 text-xs">
+          <div class="px-3.5 py-2 rounded-2xl bg-white/5 border border-white/10">
+            <span class="block text-[10px] uppercase text-stone-400">Cartera Verificada</span>
+            <span id="stat-total-properties" class="font-display font-bold text-base text-[#D9B76F]">20 Casas</span>
+          </div>
+          <div class="px-3.5 py-2 rounded-2xl bg-white/5 border border-white/10">
+            <span class="block text-[10px] uppercase text-stone-400">Rango Activo</span>
+            <span class="font-display font-bold text-base text-emerald-400">$50K – $700K</span>
+          </div>
+          <div class="px-3.5 py-2 rounded-2xl bg-white/5 border border-white/10">
+            <span class="block text-[10px] uppercase text-stone-400">Comisión Portal</span>
+            <span class="font-display font-bold text-base text-white">1% Éxito</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROPERTY FINDER SEARCH ENGINE BOX -->
+      <div class="p-3 sm:p-4 rounded-3xl bg-[#FFFDF8] dark:bg-[#121D18] text-[#14201B] dark:text-[#F2EDE0] shadow-2xl border border-stone-200 dark:border-white/10 space-y-3">
+        <!-- Row 1: Search Input + Municipality + Property Type + Beds + Price Range + Search Button -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-2.5">
+          <!-- Keyword / Location Input -->
+          <div class="lg:col-span-3 relative">
+            <label class="block text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-1">Ubicación o Palabra Clave</label>
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-[#EF5E4E] text-xs"></i>
+              <input id="filter-search-input" type="text" oninput="applyFilters()" placeholder="Miramar, Siboney, Vedado, piscina..." class="w-full pl-8 pr-3 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300/80 dark:border-white/15 text-xs font-semibold focus:outline-none focus:border-[#EF5E4E]" />
+            </div>
+          </div>
+
+          <!-- Municipality / Zone Selector -->
+          <div class="lg:col-span-2">
+            <label class="block text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-1">Zona / Reparto</label>
+            <select id="filter-zone-select" onchange="applyFilters()" class="w-full px-3 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300/80 dark:border-white/15 text-xs font-bold cursor-pointer">
+              <option value="ALL">Todas las Zonas</option>
+              <option value="Miramar">Miramar (Playa)</option>
+              <option value="Siboney">Siboney (Playa)</option>
+              <option value="El Vedado">El Vedado (Plaza)</option>
+              <option value="Nuevo Vedado">Nuevo Vedado</option>
+              <option value="Kohly">Kohly / Playa</option>
+              <option value="Playa">Playa (General)</option>
+              <option value="Centro Histórico">Habana Vieja / Centro</option>
+            </select>
+          </div>
+
+          <!-- Property Type -->
+          <div class="lg:col-span-2">
+            <label class="block text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-1">Tipo de Inmueble</label>
+            <select id="filter-type-select" onchange="applyFilters()" class="w-full px-3 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300/80 dark:border-white/15 text-xs font-bold cursor-pointer">
+              <option value="ALL">Todos los Tipos</option>
+              <option value="Casa Independiente">Casa Independiente</option>
+              <option value="Villa / Mansión">Villa / Mansión</option>
+              <option value="Casa Biplanta">Casa Biplanta</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+
+          <!-- Bedrooms -->
+          <div class="lg:col-span-2">
+            <label class="block text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-1">Habitaciones &amp; Baños</label>
+            <select id="filter-beds-select" onchange="applyFilters()" class="w-full px-3 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300/80 dark:border-white/15 text-xs font-bold cursor-pointer">
+              <option value="0">Cualquier Hab.</option>
+              <option value="2">2+ Habitaciones</option>
+              <option value="3">3+ Habitaciones</option>
+              <option value="4">4+ Habitaciones</option>
+              <option value="5">5+ Habitaciones</option>
+            </select>
+          </div>
+
+          <!-- Price Range (USD) -->
+          <div class="lg:col-span-2">
+            <label class="block text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-1">Rango de Precio (USD)</label>
+            <select id="filter-price-select" onchange="applyFilters()" class="w-full px-3 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300/80 dark:border-white/15 text-xs font-bold cursor-pointer">
+              <option value="ALL">Desde $50,000 USD</option>
+              <option value="50000-100000">$50,000 – $100,000</option>
+              <option value="100000-250000">$100,000 – $250,000</option>
+              <option value="250000-500000">$250,000 – $500,000</option>
+              <option value="500000-9999999">+$500,000 USD (Lujo)</option>
+            </select>
+          </div>
+
+          <!-- Reset / Find Button -->
+          <div class="lg:col-span-1 flex items-end">
+            <button onclick="resetAllFilters()" class="w-full py-2 px-3 rounded-xl bg-[#EF5E4E] hover:bg-[#D94636] text-white font-extrabold text-xs shadow-md transition-all flex items-center justify-center gap-1" title="Restablecer filtros">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span class="lg:hidden">Limpiar</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Row 2: Property Finder Amenity Chips & Quick Zone Pills -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-stone-200/80 dark:border-white/10">
+          <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            <span class="text-[11px] font-bold opacity-60 shrink-0 mr-1">Filtros Rápidos:</span>
+            <button type="button" onclick="toggleAmenityChip('Piscina')" data-chip="Piscina" class="js-amenity-chip px-3 py-1 rounded-full text-[11px] font-bold border border-stone-300 dark:border-white/15 bg-stone-100 dark:bg-white/5 hover:border-[#EF5E4E] shrink-0 transition-all">
+              <i class="fa-solid fa-water-ladder text-[#EF5E4E] mr-1"></i>Con Piscina
+            </button>
+            <button type="button" onclick="toggleAmenityChip('Planta Eléctrica / Inversor')" data-chip="Planta Eléctrica / Inversor" class="js-amenity-chip px-3 py-1 rounded-full text-[11px] font-bold border border-stone-300 dark:border-white/15 bg-stone-100 dark:bg-white/5 hover:border-[#EF5E4E] shrink-0 transition-all">
+              <i class="fa-solid fa-bolt text-amber-500 mr-1"></i>Planta / Solar
+            </button>
+            <button type="button" onclick="toggleAmenityChip('Garaje / Carpoch')" data-chip="Garaje / Carpoch" class="js-amenity-chip px-3 py-1 rounded-full text-[11px] font-bold border border-stone-300 dark:border-white/15 bg-stone-100 dark:bg-white/5 hover:border-[#EF5E4E] shrink-0 transition-all">
+              <i class="fa-solid fa-car text-[#7A5A1E] mr-1"></i>Garaje
+            </button>
+            <button type="button" onclick="toggleAmenityChip('Jardín & Terraza')" data-chip="Jardín & Terraza" class="js-amenity-chip px-3 py-1 rounded-full text-[11px] font-bold border border-stone-300 dark:border-white/15 bg-stone-100 dark:bg-white/5 hover:border-[#EF5E4E] shrink-0 transition-all">
+              <i class="fa-solid fa-tree text-emerald-600 mr-1"></i>Jardín / Terraza
+            </button>
+            <button type="button" onclick="toggleAmenityChip('Agua 24h / Cisterna')" data-chip="Agua 24h / Cisterna" class="js-amenity-chip px-3 py-1 rounded-full text-[11px] font-bold border border-stone-300 dark:border-white/15 bg-stone-100 dark:bg-white/5 hover:border-[#EF5E4E] shrink-0 transition-all">
+              <i class="fa-solid fa-droplet text-sky-500 mr-1"></i>Cisterna / Agua 24h
+            </button>
+          </div>
+
+          <!-- Sort & Layout Controls -->
+          <div class="flex items-center gap-2 ml-auto">
+            <span class="text-[11px] font-bold opacity-65">Ordenar:</span>
+            <select id="sort-select" onchange="applyFilters()" class="px-2.5 py-1 rounded-xl bg-stone-100 dark:bg-white/10 border border-stone-300 dark:border-white/15 text-xs font-bold cursor-pointer">
+              <option value="FEATURED">Verificadas (Destacadas)</option>
+              <option value="PRICE_ASC">Precio: Menor a Mayor</option>
+              <option value="PRICE_DESC">Precio: Mayor a Menor</option>
+              <option value="AREA_DESC">Mayor Superficie (m²)</option>
+              <option value="OLDEST">Publicaciones Clásicas</option>
+            </select>
+
+            <div class="hidden sm:flex items-center rounded-xl bg-stone-100 dark:bg-white/10 p-0.5 border border-stone-300 dark:border-white/15">
+              <button onclick="setLayoutMode('GRID')" id="layout-btn-GRID" class="px-2.5 py-1 rounded-lg bg-[#EF5E4E] text-white text-xs font-bold" title="Vista Cuadrícula">
+                <i class="fa-solid fa-grip"></i>
+              </button>
+              <button onclick="setLayoutMode('LIST')" id="layout-btn-LIST" class="px-2.5 py-1 rounded-lg text-xs font-bold" title="Vista Lista Property Finder">
+                <i class="fa-solid fa-list"></i>
+              </button>
+              <button onclick="toggleMapSplitView()" id="layout-btn-MAP" class="px-2.5 py-1 rounded-lg text-xs font-bold" title="Mapa Interactivo">
+                <i class="fa-solid fa-map"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTY FINDER COMMUNITY PILLS BAR (COUNTERS PER NEIGHBORHOOD) -->
+  <section class="max-w-7xl w-full mx-auto px-4 pt-4">
+    <div id="neighborhood-pills-bar" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1"></div>
+  </section>
+
+  <!-- MAIN CONTENT AREA: LISTINGS + OPTIONAL INTERACTIVE MAP SPLIT VIEW -->
+  <main class="max-w-7xl w-full mx-auto px-4 py-4 flex-1 space-y-6">
+    <!-- Results Header Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div>
+        <h2 id="results-heading-text" class="font-display font-bold text-base sm:text-lg">
+          Propiedades en Venta en La Habana
+        </h2>
+        <p id="results-sub-text" class="text-xs opacity-70">
+          Mostrando 20 inmuebles verificados con fotos reales y contacto directo
+        </p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="openPublishPropertyModal()" class="px-3.5 py-2 rounded-2xl bg-[#14201B] dark:bg-[#D9B76F] text-white dark:text-[#14201B] text-xs font-extrabold shadow-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-house-medical"></i>
+          <span>Anunciar mi Casa Gratis (1% Éxito)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Map Container (Toggled or Split View) -->
+    <div id="havana-map-section" class="hidden rounded-3xl overflow-hidden border border-stone-300 dark:border-white/15 shadow-xl bg-[#FFFDF8] dark:bg-[#121D18]">
+      <div class="p-3 px-4 border-b border-stone-200 dark:border-white/10 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-map-location-dot text-[#EF5E4E]"></i>
+          <span class="font-display font-bold text-sm">Mapa Interactivo Havana Home Pros (Precios en Vivo)</span>
+        </div>
+        <button onclick="toggleMapSplitView()" class="px-3 py-1 rounded-xl bg-stone-200 dark:bg-white/10 text-xs font-bold">Cerrar Mapa ✕</button>
+      </div>
+      <div id="havana-leaflet-map" class="w-full h-[420px] z-10"></div>
+    </div>
+
+    <!-- Listings Grid / List Container -->
+    <div id="properties-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </main>
+
+  <!-- BANNER DE CAPTACIÓN DE PROPIETARIOS (1% COMISIÓN AL VENDERSE) -->
+  <section class="max-w-7xl w-full mx-auto px-4 py-6">
+    <div class="rounded-3xl bg-gradient-to-r from-[#14201B] via-[#1E3129] to-[#7A5A1E] text-[#F2EDE0] p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+      <div class="space-y-2 max-w-2xl">
+        <span class="px-3 py-1 rounded-full bg-[#EF5E4E] text-white text-[10px] font-extrabold uppercase tracking-wider">Programa Propietarios &amp; Corredores</span>
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-white">
+          Publica tu propiedad 100% Gratis en Havana Home Pros
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-200 leading-relaxed">
+          No cobramos mensualidades ni tarifas por adelantado. Subimos tu casa con galería completa de alta resolución para compradores de la diáspora, diplomáticos e inversores extranjeros, y <strong>solo nos pagas el 1% de comisión si la propiedad se vende a través de nuestra web</strong>.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        <button onclick="openPublishPropertyModal()" class="px-5 py-3 rounded-full bg-[#EF5E4E] hover:bg-[#D94636] text-white font-extrabold text-xs sm:text-sm shadow-lg transition-all">
+          Publicar Propiedad Gratis Ahora
+        </button>
+        <!-- Strict Rule #5: WhatsApp button with ONLY the icon -->
+        <a href="https://wa.me/971508379080" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-lg transition-all">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DETALLE DE PROPIEDAD (PROPERTY FINDER FULL GALLERY + CALCULADORA + CONTACTO) -->
+  <div id="property-detail-modal" role="dialog" aria-modal="true" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-5">
+    <div class="bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-300 dark:border-white/15 rounded-3xl max-w-5xl w-full max-h-[94vh] overflow-y-auto shadow-2xl p-4 sm:p-6 space-y-5">
+      <div id="property-detail-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- MODAL PUBLICAR PROPIEDAD GRATIS (1% COMISIÓN DE ÉXITO + COMPRESIÓN CANVAS) -->
+  <div id="publish-property-modal" role="dialog" aria-modal="true" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+    <div class="bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-300 dark:border-white/15 rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl p-5 sm:p-7 space-y-4">
+      <div class="flex items-center justify-between border-b border-stone-200 dark:border-white/10 pb-3">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-[10px] font-extrabold uppercase">Publicación Gratuita • 1% Comisión Éxito</span>
+          <h3 class="font-display text-lg sm:text-xl font-bold mt-1">Publicar Inmueble en Havana Home Pros</h3>
+        </div>
+        <button onclick="closePublishPropertyModal()" class="w-9 h-9 rounded-full bg-stone-200 dark:bg-white/10 font-bold">✕</button>
+      </div>
+
+      <form onsubmit="submitPublicPropertyListing(event)" class="space-y-3 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="sm:col-span-2">
+            <label class="font-bold block mb-1">Título del Anuncio:</label>
+            <input id="pub-title" type="text" required placeholder="Ej: Casa Independiente con Piscina en Miramar" class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-semibold" />
+          </div>
+          <div>
+            <label class="font-bold block mb-1">Precio de Venta (USD):</label>
+            <input id="pub-price" type="number" min="10000" step="500" required oninput="updateCommissionCalculator()" placeholder="150000" class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold" />
+          </div>
+          <div>
+            <label class="font-bold block mb-1">Reparto / Zona en Cuba:</label>
+            <select id="pub-zone" class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold">
+              <option value="Miramar">Miramar (Playa)</option>
+              <option value="Siboney">Siboney (Playa)</option>
+              <option value="El Vedado">El Vedado (Plaza)</option>
+              <option value="Nuevo Vedado">Nuevo Vedado</option>
+              <option value="Kohly">Kohly (Playa)</option>
+              <option value="Playa">Playa</option>
+              <option value="Centro Histórico">La Habana Vieja</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-bold block mb-1">Tipo de Propiedad:</label>
+            <select id="pub-type" class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold">
+              <option value="Casa Independiente">Casa Independiente</option>
+              <option value="Villa / Mansión">Villa / Mansión</option>
+              <option value="Casa Biplanta">Casa Biplanta</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <label class="font-bold block mb-1">Cuartos:</label>
+              <input id="pub-beds" type="number" min="1" value="4" class="w-full px-2.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold" />
+            </div>
+            <div>
+              <label class="font-bold block mb-1">Baños:</label>
+              <input id="pub-baths" type="number" min="1" value="3" class="w-full px-2.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold" />
+            </div>
+            <div>
+              <label class="font-bold block mb-1">Área m²:</label>
+              <input id="pub-area" type="number" min="40" value="280" class="w-full px-2.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold" />
+            </div>
+          </div>
+          <div>
+            <label class="font-bold block mb-1">Nombre del Propietario / Agente:</label>
+            <input id="pub-contact" type="text" required placeholder="Tu nombre" class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-semibold" />
+          </div>
+          <div>
+            <label class="font-bold block mb-1">WhatsApp de Contacto:</label>
+            <input id="pub-phone" type="text" required placeholder="+53 5xxxxxxx" class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-semibold" />
+          </div>
+        </div>
+
+        <!-- Live 1% Commission Breakdown -->
+        <div id="pub-commission-box" class="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-xs space-y-1">
+          <div class="font-extrabold text-emerald-700 dark:text-emerald-300">Resumen Transparente Havana Home Pros (1% Éxito):</div>
+          <div>• Costo por publicar anuncio hoy: <strong>$0.00 USD (100% GRATIS)</strong></div>
+          <div id="pub-commission-numbers">• Si se vende por nuestra web: Recibes el <strong>99% neto</strong> y solo abonas el <strong>1%</strong> al concretarse la venta.</div>
+        </div>
+
+        <div>
+          <label class="font-bold block mb-1">Descripción Completa del Inmueble:</label>
+          <textarea id="pub-desc" rows="3" required placeholder="Describe distribución, piscina, planta eléctrica, garaje, papeles en regla..." class="w-full px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15"></textarea>
+        </div>
+
+        <!-- HTML5 Canvas Mobile Photo Upload -->
+        <div class="p-3 rounded-2xl bg-stone-100 dark:bg-white/5 border border-dashed border-stone-300 dark:border-white/20 space-y-2">
+          <label class="font-bold block text-xs">
+            <i class="fa-solid fa-camera text-[#EF5E4E] mr-1"></i>Subir Foto desde tu Celular o Galería (Compresión Automática Canvas):
+          </label>
+          <input type="file" accept="image/*" onchange="handleCanvasPhotoUpload(event, 'pub-image-dataurl', 'pub-image-preview')" class="w-full text-[11px]" />
+          <input id="pub-image-dataurl" type="hidden" value="" />
+          <img id="pub-image-preview" src="" alt="Preview" class="hidden w-24 h-20 rounded-xl object-cover border" />
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-2xl bg-[#EF5E4E] hover:bg-[#D94636] text-white font-extrabold text-xs shadow-lg transition-all">
+          Publicar Propiedad Gratis en Havana Home Pros
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL LOGIN & DASHBOARD ADMINISTRADOR MÓVIL (5 PESTAÑAS "TIERRA QUERIDA") -->
+  <div id="admin-modal" role="dialog" aria-modal="true" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+    <div class="bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-300 dark:border-white/15 rounded-3xl max-w-5xl w-full max-h-[92vh] overflow-y-auto shadow-2xl p-5 sm:p-7 space-y-5">
+      <div class="flex items-center justify-between border-b border-stone-200 dark:border-white/10 pb-3">
+        <div class="flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-2xl bg-[#7A5A1E] text-white flex items-center justify-center">
+            <i class="fa-solid fa-crown"></i>
+          </span>
+          <div>
+            <h3 class="font-display font-bold text-lg">Panel Administrador Móvil — Havana Home Pros</h3>
+            <p class="text-[11px] opacity-70">Gestión de Cartera Inmobiliaria, Anuncios, Zonas, Citas y Backup Supabase</p>
+          </div>
+        </div>
+        <button onclick="closeAdminModal()" class="w-9 h-9 rounded-full bg-stone-200 dark:bg-white/10 font-bold">✕</button>
+      </div>
+
+      <!-- Login Box -->
+      <div id="admin-login-box" class="max-w-md mx-auto py-6 space-y-4 text-xs">
+        <h4 class="font-display font-bold text-base text-center">Acceso Exclusivo Administrador</h4>
+        <form onsubmit="handleAdminLogin(event)" class="space-y-3">
+          <div>
+            <label class="font-bold block mb-1">Correo Administrador:</label>
+            <input id="admin-email-input" type="email" value="admin@havanahomepros.com" required class="w-full px-3.5 py-2.5 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold" />
+          </div>
+          <div>
+            <label class="font-bold block mb-1">Contraseña:</label>
+            <input id="admin-pass-input" type="password" value="Havana2026!" required class="w-full px-3.5 py-2.5 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-bold" />
+          </div>
+          <button type="submit" class="w-full py-3 rounded-2xl bg-[#7A5A1E] text-white font-extrabold">Desbloquear Panel Administrador</button>
+        </form>
+      </div>
+
+      <!-- 5-Tab Admin Content -->
+      <div id="admin-dashboard-content" class="hidden space-y-4 text-xs">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-stone-200 dark:border-white/10 pb-3">
+          <button onclick="switchAdminTab('adm-tab-1')" class="js-adm-tab px-3.5 py-2 rounded-xl bg-[#14201B] text-white font-bold shrink-0">1. Catálogo Propiedades (CRUD)</button>
+          <button onclick="switchAdminTab('adm-tab-2')" class="js-adm-tab px-3.5 py-2 rounded-xl bg-stone-200/70 dark:bg-white/10 font-bold shrink-0">2. Anuncios &amp; Promociones</button>
+          <button onclick="switchAdminTab('adm-tab-3')" class="js-adm-tab px-3.5 py-2 rounded-xl bg-stone-200/70 dark:bg-white/10 font-bold shrink-0">3. Motor de Zonas / Categorías</button>
+          <button onclick="switchAdminTab('adm-tab-4')" class="js-adm-tab px-3.5 py-2 rounded-xl bg-stone-200/70 dark:bg-white/10 font-bold shrink-0">4. Historial de Citas / Leads</button>
+          <button onclick="switchAdminTab('adm-tab-5')" class="js-adm-tab px-3.5 py-2 rounded-xl bg-stone-200/70 dark:bg-white/10 font-bold shrink-0">5. Supabase &amp; Backup JSON 1-Clic</button>
+        </div>
+
+        <!-- Tab 1: CRUD -->
+        <div id="adm-tab-1" class="js-adm-panel space-y-3">
+          <div class="flex items-center justify-between">
+            <h4 class="font-display font-bold text-base">Cartera Activa (<span id="adm-prop-count">20</span> Propiedades)</h4>
+            <button onclick="closeAdminModal(); openPublishPropertyModal();" class="px-3.5 py-2 rounded-xl bg-[#EF5E4E] text-white font-extrabold">+ Agregar Nueva Propiedad</button>
+          </div>
+          <div id="admin-properties-list" class="space-y-2 max-h-[420px] overflow-y-auto pr-1"></div>
+        </div>
+
+        <!-- Tab 2: Announcements -->
+        <div id="adm-tab-2" class="js-adm-panel hidden space-y-3">
+          <h4 class="font-display font-bold text-base">Editor en Vivo de Cintillo Superior y Promociones</h4>
+          <input id="adm-banner-input" type="text" placeholder="Texto del anuncio superior..." class="w-full px-3.5 py-2.5 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 font-semibold" />
+          <button onclick="saveAdminBanner()" class="px-4 py-2.5 rounded-xl bg-[#7A5A1E] text-white font-extrabold">Actualizar Banner en Vivo</button>
+        </div>
+
+        <!-- Tab 3: Dynamic Categories/Zones -->
+        <div id="adm-tab-3" class="js-adm-panel hidden space-y-3">
+          <h4 class="font-display font-bold text-base">Motor Dinámico de Zonas y Repartos</h4>
+          <div class="flex gap-2">
+            <input id="adm-new-zone" type="text" placeholder="Nuevo reparto (ej. Atabey, Cubanacán)..." class="flex-1 px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15" />
+            <button onclick="addDynamicZone()" class="px-4 py-2 rounded-xl bg-[#14201B] text-white font-extrabold">Añadir Zona</button>
+          </div>
+          <div id="adm-zones-list" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Tab 4: Appointments / Inquiries -->
+        <div id="adm-tab-4" class="js-adm-panel hidden space-y-3">
+          <h4 class="font-display font-bold text-base">Registro de Solicitudes de Visita y Citas</h4>
+          <div id="adm-appointments-list" class="space-y-2"></div>
+        </div>
+
+        <!-- Tab 5: Supabase & 1-Click JSON Backup -->
+        <div id="adm-tab-5" class="js-adm-panel hidden space-y-4">
+          <h4 class="font-display font-bold text-base">Persistencia Dual-Layer (Supabase + JSON en 1 Clic)</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input id="adm-supa-url" type="url" placeholder="https://tu-proyecto.supabase.co" class="px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15" />
+            <input id="adm-supa-key" type="password" placeholder="Supabase Anon Key" class="px-3.5 py-2 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15" />
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="exportBackupJson()" class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-extrabold">
+              <i class="fa-solid fa-download mr-1"></i>Descargar Copia de Seguridad JSON (1 Clic)
+            </button>
+            <label class="px-4 py-2.5 rounded-xl bg-[#7A5A1E] text-white font-extrabold cursor-pointer">
+              <i class="fa-solid fa-upload mr-1"></i>Restaurar JSON
+              <input type="file" accept=".json" onchange="importBackupJson(event)" class="hidden" />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex">
+    <div class="bg-[#FFFDF8] dark:bg-[#121D18] w-80 max-w-[85vw] h-full p-5 flex flex-col justify-between shadow-2xl">
+      <div class="space-y-4">
+        <div class="flex items-center justify-between border-b border-stone-200 dark:border-white/10 pb-3">
+          <span class="font-display font-bold text-lg">Havana Home Pros</span>
+          <button onclick="toggleMobileDrawer(false)" class="w-8 h-8 rounded-full bg-stone-200 dark:bg-white/10 font-bold">✕</button>
+        </div>
+        <div class="space-y-2 text-xs font-bold">
+          <button onclick="setMainTab('BUY'); toggleMobileDrawer(false);" class="w-full text-left p-3 rounded-xl bg-stone-100 dark:bg-white/5">Comprar Propiedades (20+)</button>
+          <button onclick="setMainTab('LUXURY'); toggleMobileDrawer(false);" class="w-full text-left p-3 rounded-xl bg-stone-100 dark:bg-white/5">Mansiones &amp; Lujo (+$150K)</button>
+          <button onclick="setMainTab('OFFGRID'); toggleMobileDrawer(false);" class="w-full text-left p-3 rounded-xl bg-stone-100 dark:bg-white/5">Con Piscina / Respaldo Solar</button>
+          <button onclick="toggleMapSplitView(); toggleMobileDrawer(false);" class="w-full text-left p-3 rounded-xl bg-stone-100 dark:bg-white/5">Mapa Interactivo de La Habana</button>
+          <button onclick="openPublishPropertyModal(); toggleMobileDrawer(false);" class="w-full text-left p-3 rounded-xl bg-[#EF5E4E] text-white">Publicar Casa Gratis (1% Éxito)</button>
+          <a href="sniper.html" class="block w-full text-left p-3 rounded-xl bg-[#14201B] text-[#D9B76F]">Radar Sniper Privado (David)</a>
+        </div>
+      </div>
+      <div class="pt-4 border-t border-stone-200 dark:border-white/10 flex items-center justify-between text-xs">
+        <span>Idioma:</span>
+        <div class="flex gap-1">
+          <button onclick="changeLanguage('es')" class="px-2.5 py-1 rounded bg-stone-200 dark:bg-white/10 font-bold">ES</button>
+          <button onclick="changeLanguage('en')" class="px-2.5 py-1 rounded bg-stone-200 dark:bg-white/10 font-bold">EN</button>
+          <button onclick="changeLanguage('ar')" class="px-2.5 py-1 rounded bg-stone-200 dark:bg-white/10 font-bold">AR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON: STRICT RULE #5 (ONLY ICON, ZERO TEXT) -->
+  <a href="https://wa.me/971508379080" target="_blank" rel="noopener" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-105">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- FOOTER WITH MANDATORY SIGNATURE -->
+  <footer class="bg-[#14201B] text-[#F2EDE0] border-t border-white/10 py-8 px-4 mt-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-[#EF5E4E] text-white flex items-center justify-center font-bold">H</div>
+        <div>
+          <span class="font-display font-bold text-sm text-white">Havana Home Pros</span>
+          <p class="text-[11px] text-stone-400">El Portal Inmobiliario de Cuba • Publicación Gratuita (1% Comisión de Éxito)</p>
+        </div>
+      </div>
+      <div class="text-center sm:text-right text-[11px] text-stone-400">
+        <p>© 2026 Havana Home Pros. Todos los derechos reservados.</p>
+        <p class="mt-0.5 font-semibold text-[#D9B76F]">Developed by Tecnoemprende</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Application Logic -->
+  <script src="houses_seed.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

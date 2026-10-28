@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Radar Sniper Revolico — Panel Privado de Oportunidades (Exclusivo David)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F6F1E7;
+      color: #14201B;
+    }
+    html.dark body {
+      background-color: #09100D;
+      color: #F2EDE0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- TOP EXECUTIVE HEADER -->
+  <header class="sticky top-0 z-40 bg-[#14201B] text-[#F2EDE0] border-b border-[#D9B76F]/30 px-4 py-3.5 shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#EF5E4E] to-[#7A5A1E] text-white flex items-center justify-center shadow-md">
+          <i class="fa-solid fa-crosshairs text-lg"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-display font-bold text-base sm:text-xl text-white">Radar Sniper Revolico</h1>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase">Panel Privado de David</span>
+          </div>
+          <p class="text-[11px] text-stone-300">Feed directo desde Jota (`camp_tecno_sniper_gangas`) • Rebajas, gangas y oportunidades urgentes detectadas en Cuba</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center gap-1.5 transition-all">
+          <i class="fa-solid fa-house-chimney-window text-[#D9B76F]"></i>
+          <span>Ir a Havana Home Pros</span>
+        </a>
+        <button onclick="document.documentElement.classList.toggle('dark')" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 text-[#D9B76F] flex items-center justify-center">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <!-- Strict Rule #5: WhatsApp icon-only button -->
+        <a href="https://wa.me/971508379080" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-md">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FILTER & SUMMARY BAR -->
+  <section class="max-w-7xl w-full mx-auto px-4 pt-6 space-y-4">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
+        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Oportunidades Activas</span>
+        <span id="sniper-total-count" class="font-display font-bold text-2xl text-[#EF5E4E]">15</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
+        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Inmuebles Rebajados</span>
+        <span id="sniper-houses-count" class="font-display font-bold text-2xl text-[#7A5A1E] dark:text-[#D9B76F]">4</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
+        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Energía / Inversores / EcoFlow</span>
+        <span id="sniper-energy-count" class="font-display font-bold text-2xl text-emerald-600">5</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm">
+        <span class="text-[10px] uppercase font-extrabold opacity-60 block">Marcadas Favoritas</span>
+        <span id="sniper-starred-count" class="font-display font-bold text-2xl text-amber-500">0</span>
+      </div>
+    </div>
+
+    <!-- Search & Category Filter Bar -->
+    <div class="p-3.5 rounded-2xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 shadow-sm flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-1.5">
+        <button onclick="setSniperCategory('ALL')" id="snip-cat-ALL" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-[#14201B] text-white text-xs font-extrabold">
+          Todas las Gangas
+        </button>
+        <button onclick="setSniperCategory('REAL_ESTATE')" id="snip-cat-REAL_ESTATE" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
+          <i class="fa-solid fa-house text-[#EF5E4E] mr-1"></i>Casas &amp; Aptos Rebajados
+        </button>
+        <button onclick="setSniperCategory('ENERGY')" id="snip-cat-ENERGY" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
+          <i class="fa-solid fa-bolt text-amber-500 mr-1"></i>Plantas &amp; Estaciones Energía
+        </button>
+        <button onclick="setSniperCategory('OTHER')" id="snip-cat-OTHER" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
+          <i class="fa-solid fa-tags text-emerald-600 mr-1"></i>Motos, Laptops &amp; Equipos
+        </button>
+        <button onclick="setSniperCategory('STARRED')" id="snip-cat-STARRED" class="js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold">
+          <i class="fa-solid fa-star text-amber-400 mr-1"></i>Guardadas por David
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 w-full sm:w-auto">
+        <input id="sniper-search" type="text" oninput="renderSniperGrid()" placeholder="Filtrar oportunidad, precio o zona..." class="w-full sm:w-64 px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-black/30 border border-stone-300 dark:border-white/15 text-xs font-semibold" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SNIPER OPPORTUNITIES GRID -->
+  <main class="max-w-7xl w-full mx-auto px-4 py-5 flex-1">
+    <div id="sniper-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#14201B] text-[#F2EDE0] border-t border-white/10 py-6 px-4 mt-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+      <span><strong>Radar Sniper Revolico</strong> — Uso Privado Exclusivo de David (`camp_tecno_sniper_gangas`)</span>
+      <span class="font-semibold text-[#D9B76F]">Developed by Tecnoemprende</span>
+    </div>
+  </footer>
+
+  <script src="sniper_seed.js"></script>
+  <script>
+    const SNIPER_STORAGE = 'david_sniper_state_v1';
+    let activeSniperCat = 'ALL';
+    let starredIds = JSON.parse(localStorage.getItem(SNIPER_STORAGE) || '[]');
+    const opportunities = Array.isArray(window.INITIAL_SNIPER_DATA) ? window.INITIAL_SNIPER_DATA : [];
+
+    function classifyItem(item) {
+      const t = `${item.title} ${item.description}`.toLowerCase();
+      if (t.includes('casa') || t.includes('apartamento') || t.includes('apto') || t.includes('propiedad') || t.includes('cuartos') || t.includes('biplanta')) {
+        return 'REAL_ESTATE';
+      }
+      if (t.includes('planta') || t.includes('estacion') || t.includes('estación') || t.includes('batería') || t.includes('bateria') || t.includes('inversor') || t.includes('solar') || t.includes('jackery')) {
+        return 'ENERGY';
+      }
+      return 'OTHER';
+    }
+
+    function toggleStarSniper(id) {
+      const sid = String(id);
+      const idx = starredIds.indexOf(sid);
+      if (idx >= 0) starredIds.splice(idx, 1);
+      else starredIds.push(sid);
+      localStorage.setItem(SNIPER_STORAGE, JSON.stringify(starredIds));
+      renderSniperGrid();
+    }
+
+    function setSniperCategory(cat) {
+      activeSniperCat = cat;
+      document.querySelectorAll('.js-snip-cat').forEach(b => {
+        b.className = 'js-snip-cat px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-white/10 text-xs font-bold';
+      });
+      const btn = document.getElementById(`snip-cat-${cat}`);
+      if (btn) btn.className = 'js-snip-cat px-3.5 py-1.5 rounded-xl bg-[#14201B] text-white text-xs font-extrabold';
+      renderSniperGrid();
+    }
+
+    function renderSniperGrid() {
+      const q = (document.getElementById('sniper-search')?.value || '').trim().toLowerCase();
+      document.getElementById('sniper-total-count').textContent = String(opportunities.length);
+      document.getElementById('sniper-houses-count').textContent = String(opportunities.filter(i => classifyItem(i) === 'REAL_ESTATE').length);
+      document.getElementById('sniper-energy-count').textContent = String(opportunities.filter(i => classifyItem(i) === 'ENERGY').length);
+      document.getElementById('sniper-starred-count').textContent = String(starredIds.length);
+
+      const filtered = opportunities.filter(item => {
+        const cat = classifyItem(item);
+        if (activeSniperCat === 'STARRED' && !starredIds.includes(String(item.id))) return false;
+        if (activeSniperCat !== 'ALL' && activeSniperCat !== 'STARRED' && cat !== activeSniperCat) return false;
+        if (q) {
+          const hay = `${item.title} ${item.description} ${item.contactName} ${item.price}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      const grid = document.getElementById('sniper-grid');
+      if (!grid) return;
+
+      grid.innerHTML = filtered.map(item => {
+        const sid = String(item.id);
+        const isStar = starredIds.includes(sid);
+        const cat = classifyItem(item);
+        const catLabel = cat === 'REAL_ESTATE' ? 'Inmueble Rebajado' : cat === 'ENERGY' ? 'Energía / Planta' : 'Oportunidad Flash';
+        const img = (item.images && item.images[0]) || (item.cdnImages && item.cdnImages[0]) || 'assets/houses/house_57511526_1.jpg';
+        const waMsg = encodeURIComponent(`Hola, vi tu anuncio en Revolico de "${item.title}" y me interesa saber si sigue disponible para compra inmediata.`);
+        const waHref = `https://wa.me/${item.cleanPhone || '971508379080'}?text=${waMsg}`;
+
+        return `
+          <article class="rounded-3xl bg-[#FFFDF8] dark:bg-[#121D18] border border-stone-200/90 dark:border-white/10 overflow-hidden shadow-md flex flex-col justify-between">
+            <div>
+              <div class="relative aspect-[16/10] bg-stone-900 overflow-hidden">
+                <img src="${img}" alt="${item.title.replace(/"/g, '&quot;')}" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25"></div>
+                <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                  <span class="px-2.5 py-1 rounded-lg bg-[#EF5E4E] text-white text-[10px] font-extrabold uppercase shadow">
+                    <i class="fa-solid fa-fire mr-1"></i>Rebajada
+                  </span>
+                  <span class="px-2.5 py-1 rounded-lg bg-black/70 text-[#D9B76F] text-[10px] font-bold">
+                    ${catLabel}
+                  </span>
+                </div>
+                <button onclick="toggleStarSniper('${sid}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/55 text-white flex items-center justify-center">
+                  <i class="${isStar ? 'fa-solid text-amber-400' : 'fa-regular text-white'} fa-star text-sm"></i>
+                </button>
+                <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs font-extrabold">
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-600 shadow">
+                    $${Number(item.price || 0).toLocaleString('en-US')} ${item.currency || 'USD'}
+                  </span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-black/60">${item.publishedDate || '2026-10-27'}</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-2">
+                <h3 class="font-bold text-sm leading-snug">${item.title}</h3>
+                <div class="text-[11px] font-semibold text-[#7A5A1E] dark:text-[#D9B76F]">
+                  Anunciante: ${item.contactName || 'Anunciante Revolico'} • Ref #${item.adId}
+                </div>
+                <p class="text-xs opacity-80 line-clamp-4 whitespace-pre-line bg-stone-100 dark:bg-white/5 p-3 rounded-2xl border border-stone-200/70 dark:border-white/10">${item.description || 'Sin descripción adicional.'}</p>
+              </div>
+            </div>
+
+            <div class="p-4 pt-0 flex items-center justify-between gap-2">
+              <a href="${item.url}" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-[#14201B] hover:bg-[#EF5E4E] dark:bg-[#D9B76F] dark:text-[#14201B] text-white font-extrabold text-xs text-center transition-all">
+                Ver Anuncio Original en Revolico ↗
+              </a>
+              <!-- Strict Rule #5: WhatsApp button with ONLY the icon, zero text -->
+              <a href="${waHref}" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-sm shrink-0">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSniperGrid);
+  </script>
+</body>
+</html>

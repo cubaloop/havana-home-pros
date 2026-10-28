@@ -1,0 +1,326 @@
+window.INITIAL_SNIPER_DATA = [
+  {
+    "id": "sniper-58409828",
+    "adId": "58409828",
+    "title": "REBAJADA 👑*PLANTA ELÉCTRICA SIGMA Inverter 6500W pico y 5000W continuos*   Gasolina ⛽️  Gas 💨  Es silenciosa🤩✅ *Detal",
+    "price": 1220,
+    "currency": "USD",
+    "contactName": "Odelmys Aranguren",
+    "phone": "+5359127751",
+    "cleanPhone": "5359127751",
+    "description": "REBAJADA\n👑*PLANTA ELÉCTRICA SIGMA Inverter 6500W pico y 5000W continuos* \n\nGasolina ⛽️ \nGas 💨 \nEs silenciosa🤩✅\n*Detalles en la foto*✅\n\nPrecio: 💵1220 USD\n\n🚗*Transporte gratis en lugares céntricos y 1 semana de garantía*\n*Nota adicional*: Garantía solo válida para gasolina ⛽️ y gas de balita \n❌Si hacen adaptación para gas de la calle no aplica la garantía❌,",
+    "url": "https://www.revolico.com/item/rebajada-planta-electrica-sigma-inverter-6500w-pico-y-5000w-continuos-gasolina-gas-es-silenciosa-detal-58409828",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_58409828_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/5225c1693785d3fde1b0d23a1717fa74d52707cd5a3c271aafae6970bfc0c1fc_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-58379070",
+    "adId": "58379070",
+    "title": "*REBAJADA  👑ESTACION DE ENERGÍA Jackery 3600 PLUS*",
+    "price": 2050,
+    "currency": "USD",
+    "contactName": "Sinay Diaz",
+    "phone": "+5356852027",
+    "cleanPhone": "5356852027",
+    "description": "*REBAJADA \n👑ESTACION DE ENERGÍA Jackery 3600 PLUS*   \n\nSalida AC: 120 V / 60 Hz\n🔌 Potencia: 3,600 W continuos\n🚀 Pico: 7,200 W\n🔋 Capacidad: 3,584 Wh \n\n2050 usd con transporte gratis en lugares céntricos,7 días de garantía.",
+    "url": "https://www.revolico.com/item/rebajada-estacion-de-energia-jackery-3600-plus-58379070",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_58379070_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/f556f2ea449bc5adc3da59169f2da91c911a7747df5c94c031f0c638975bc6b2_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-58311226",
+    "adId": "58311226",
+    "title": "REBAJADA A $26.000usd   en mano. En venta apartamento de un  edificio multifamiliar de solo 14 aptos en  La Habana Vieja",
+    "price": 26000,
+    "currency": "USD",
+    "contactName": "YAMI INMOBILIARIA",
+    "phone": "+5359673684",
+    "cleanPhone": "5359673684",
+    "description": "REBAJADA A $26.000usd  \nen mano. En venta apartamento de un  edificio multifamiliar de solo 14 aptos en  La Habana Vieja. Zona super tranquila  dentro del Centro Historico de La Habana  Consta de 3 cuartos (2climatizados con  split), 2 baños, sala, cocina, comedor y  Patio interior. Electricidad 110-220v.  Entrada de agua con su motor para su  tanque de 2500L independiente. Agua  fría-caliente en baño y cocina con su  calentador de gas automático Se deja  casi todo dentro. PAPELES EN REGLA.*",
+    "url": "https://www.revolico.com/item/rebajada-a-26000usd-en-mano-en-venta-apartamento-de-un-edificio-multifamiliar-de-solo-14-aptos-en-la-habana-vieja-58311226",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_58311226_1.jpg",
+      "assets/sniper/sniper_58311226_2.jpg",
+      "assets/sniper/sniper_58311226_3.jpg",
+      "assets/sniper/sniper_58311226_4.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/fe114fda8a06383bb1d01e8a13d3f8ecdaacadcd7afedc66c8287991164a7e6d_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/74be20782dfce46f17cd975c6347209c24ee6fbd173bf03a07491587455bdcb7_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/5cb03f2fc0a3f7178abbbf2321dd5edf8b3d7077c0f5d225bfa025eb87b1279b_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/84b089b2955c01381f9b5ba81c1d9d11d4ed07c754f2df2b0c521f2f2b4766ce_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-58026976",
+    "adId": "58026976",
+    "title": "REBAJADA  👑Estación de energía🔋  OUPES EXODUS  Potencia pico 3600w  Potencia continua 1200w 992 Wh",
+    "price": 535,
+    "currency": "USD",
+    "contactName": "Caleb Gonzalez",
+    "phone": "+5351431910",
+    "cleanPhone": "5351431910",
+    "description": "REBAJADA \n👑Estación de energía🔋 \nOUPES EXODUS \nPotencia pico 3600w \nPotencia continua 1200w\n992 Wh\n\n535 usd con transporte gratis en lugares céntricos, 7 días de garantía.",
+    "url": "https://www.revolico.com/item/rebajada-estacion-de-energia-oupes-exodus-potencia-pico-3600w-potencia-continua-1200w-992-wh-58026976",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_58026976_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/696178b8c7b7e9f1f101bba067873ebaf5f02adf2bd0e32d2ed705dd9a91e9b2_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-57590723",
+    "adId": "57590723",
+    "title": "Rebajada a 120usd Mesa grande con equipos recargables nuevos. Pinturas de gel nuevas y de uso, polvos acrilicos, decorac",
+    "price": 120,
+    "currency": "USD",
+    "contactName": "Ivet",
+    "phone": "+5352689598",
+    "cleanPhone": "5352689598",
+    "description": "Rebajada a 120usd\nMesa grande con equipos recargables nuevos. Pinturas de gel nuevas y de uso, polvos acrilicos, decoraciones etc etc..\n\nLa habana centro habana\nTransporte aparte\nDirecto al watsap wa//me//52689598",
+    "url": "https://www.revolico.com/item/rebajada-a-120usd-mesa-grande-con-equipos-recargables-nuevos-pinturas-de-gel-nuevas-y-de-uso-polvos-acrilicos-decorac-57590723",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_57590723_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/fb88ae4bcd42ea337e9672c6fd60e804593af287382a2fa6f7f7ebc0714cc0e3_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-57532680",
+    "adId": "57532680",
+    "title": "REBAJADA‼️ PATINETA ELÉCTRICA MAF 🛴",
+    "price": 650,
+    "currency": "USD",
+    "contactName": "NovaCart Shop-Habana",
+    "phone": "+5363462084",
+    "cleanPhone": "5363462084",
+    "description": "PATINETA ELÉCTRICA MAF 🛴\n\n☑️Potencia 1200w \n☑️Bateria 48v - 20ah lithium \n☑️Autonomía: 50-60km por carga\n☑️Pantalla Digital\n☑️Frenos de banda\n☑️Batería de LITHIUM\n\n📃Papeles en regla y garantía 15 días 📃\n🎨COLORES ⚫️🔵🔴🔘\n\n🚛 MENSAJERÍA INCLUIDA HABANA\n\nPRECIO 👉 650 USD",
+    "url": "https://www.revolico.com/item/rebajada-patineta-electrica-maf-57532680",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_57532680_1.jpg",
+      "assets/sniper/sniper_57532680_2.jpg",
+      "assets/sniper/sniper_57532680_3.jpg",
+      "assets/sniper/sniper_57532680_4.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/8d3c818aaae656a5c882abcacecea5edd20843227446bde5fc430ccb775178c5_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/b1835f11375123c6eb38f62473df47a277dce7255ec93801db3ddf224bfba437_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/2a40c622a25c9d71f13c29e012cb9f45647dc0038bf5bf7c36417970966d1d22_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/c550350ed923a93ee30727deb0013e188a231eed426a38935ae21ed65cfa9c4c_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-57241821",
+    "adId": "57241821",
+    "title": "Rebajada 12000 OFERTA RIO VERDE INTERIOR DE LA MISMA CASA INDEPENDIENTE A PASOS DE LA CALZADA",
+    "price": 12000,
+    "currency": "USD",
+    "contactName": "Miliuver Lore chaves",
+    "phone": "+5353822568",
+    "cleanPhone": "5353822568",
+    "description": "",
+    "url": "https://www.revolico.com/item/rebajada-12000-oferta-rio-verde-interior-de-la-misma-casa-independiente-a-pasos-de-la-calzada-57241821",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_57241821_1.jpg",
+      "assets/sniper/sniper_57241821_2.jpg",
+      "assets/sniper/sniper_57241821_3.jpg",
+      "assets/sniper/sniper_57241821_4.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/351475e56fb37680a20913437388a0a9b696b8e688f7bd00108476fc8bbbf092_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/0765a5045010b8609fd512bfd42df6b9a1474f7c1c54d129d2523f2e87320f2d_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/69b490d0caff1f7f6a27dfd41d79599995ef5ad1c81568df1b954a81e8454fec_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/8d69ab90dd06b9f6594e7004285f4fbb940f26607813c56c6fc96b6bbf308dc9_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-57214278",
+    "adId": "57214278",
+    "title": "REBAJADA!!!CASA CAPITALISTA DE DOS PLANTAS EN SANTO SUÁREZ",
+    "price": 60000,
+    "currency": "USD",
+    "contactName": "Nexo Digital",
+    "phone": "+5363252003",
+    "cleanPhone": "5363252003",
+    "description": "Una propiedad amplia, espaciosa, completamente cuidada y con una segunda planta totalmente nueva y remodelada con excelente gusto.\n\n🏠 PLANTA BAJA\n✅ Portal amplio\n✅ Sala grande y espaciosa\n✅ Comedor\n✅ Cocina grande, remodelada\n✅ Pasillo interior\n✅ Patio interior\n✅ Cisterna Propia \n✅ 3 Habitaciones Amplias climatizadas\n✅ Baño principal grande\n✅ Baño auxiliar\n✅ Garaje\n\n✨ SEGUNDA PLANTA — TOTALMENTE NUEVA\n🔹 Piso de porcelanato\n🔹 Detalles y terminaciones en mármol\n🔹 Sala-cocina amplia y moderna\n🔹 Hab",
+    "url": "https://www.revolico.com/item/casa-capitalista-de-dos-plantas-en-santo-suarez-57214278",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_57214278_1.jpg",
+      "assets/sniper/sniper_57214278_2.jpg",
+      "assets/sniper/sniper_57214278_3.jpg",
+      "assets/sniper/sniper_57214278_4.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/c14ad51dba81c2f1b18a5d9b2c6bc4711a7da405d053d2f8d15037f94ae164a8_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/200f22b1742ea1fe0d944a2afeabaa924545fa7f586265ff98d86ebd0496ed7d_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/02fd66aa02d86fd8aed7d23848500bdcdc9fe54675ca1f946dfd8b0e16aa6c4b_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/d658e033e8d9b46a6d2bf136fb2b483e35a3a6b8fff4b329937c5a94e68290b0_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-56927885",
+    "adId": "56927885",
+    "title": "Rebajada Mesa de TV con rueditas",
+    "price": 3000,
+    "currency": "CUP",
+    "contactName": "Miriam Alpízar",
+    "phone": "+5352864776",
+    "cleanPhone": "5352864776",
+    "description": "Mesa de TV en buen estado con rueditas",
+    "url": "https://www.revolico.com/item/mesa-de-tv-con-rueditas-56927885",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_56927885_1.jpg",
+      "assets/sniper/sniper_56927885_2.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/a0e76ce0c86c993c03339be6450cdf787b0fc69bcd96b89a37600871894da130_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/8d1a787a858ccdbe32d40ac3b5dc4726057c7bda9882e65765e34aaa974848c0_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-56874098",
+    "adId": "56874098",
+    "title": "Rebajada a 1670 USD con panel. Estación de energía de 3072 wh",
+    "price": 1670,
+    "currency": "USD",
+    "contactName": "Proyectos Energía",
+    "phone": "+5359141040",
+    "cleanPhone": "5359141040",
+    "description": "Incluye panel solar de 540w",
+    "url": "https://www.revolico.com/item/estacion-de-energia-de-3072-wh-56874098",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_56874098_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/5214ca4f964d9df73e9e8b87826194fbfc70bc1b6e7e6fd600d5ba2a1b46f81a_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-56843996",
+    "adId": "56843996",
+    "title": "Rebajada quedan pocas 👀 *BICIMOTO MARCA JMD 2026* Nuevas 0 km",
+    "price": 1600,
+    "currency": "USD",
+    "contactName": "VentaMix",
+    "phone": "+5350437239",
+    "cleanPhone": "5350437239",
+    "description": "👀*Rebajada quedan pocas 👀\n*BICIMOTO MARCA JMD 2026*\nNuevas 0 km\n\n  ⚙️CARACTERÍSTICAS: \n\n• 3000 W\n• ⁠48 Volt \n• ⁠50 Amp\n• ⁠batería de litio antiexplosiva \n• Hasta 120 km de autonomía\n• ⁠caja VOTOL EM-50\n• Velocidad máxima 50 km/h\n• Luces LED, Alarma, encendido a distancia. \n• Bocina compatible con bluetooh, memoria USB y micro SD\n\n🎁INCLUYE: casco, capa, guantillas, 2 juegos de llaves y cargador inteligente 🔌\n\n🧾PAPELES EN REGLA Y GARANTÍA \n🚛DOMICILIO INCLUIDO \n COLORES: 🔴\n\n  💲FORMAS DE PAGO💲\n ⁠ US",
+    "url": "https://www.revolico.com/item/rebajada-quedan-pocas-bicimoto-marca-jmd-2026-nuevas-0-km-56843996",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [],
+    "cdnImages": []
+  },
+  {
+    "id": "sniper-48894965",
+    "adId": "48894965",
+    "title": "Rebajada a 40 Fuente Gaming +raton Logitech",
+    "price": 40,
+    "currency": "USD",
+    "contactName": "InformaticASK",
+    "phone": "+34674332790",
+    "cleanPhone": "34674332790",
+    "description": "Fuente Gaming (220volt) potente de 750 Watt Tempest \nMouse Logitech inalambrico \n\nAcepto 40 Euros/USD/ o CUP al cambio del euro en el toque.",
+    "url": "https://www.revolico.com/item/tu-mejor-oferta-torre-completatarjeta-de-video-con-raton-y-memoria-flash-de-regalo-48894965",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_48894965_1.jpg",
+      "assets/sniper/sniper_48894965_2.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/ff065629139ac6c792a56b43260fd77a943928e61fb49cec6bc12f01248e3e9e_detail_desktop.jpg",
+      "https://pic.revolico.com/pics/2a148ea1287774a85f22601ad61e35faae9d450e42289da4f4e5eb7b8df972e8_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-58403326",
+    "adId": "58403326",
+    "title": "Recien rebajada, casa villanueva solo 11000.",
+    "price": 11000,
+    "currency": "USD",
+    "contactName": "Lia GARCIA",
+    "phone": "+5358123343",
+    "cleanPhone": "5358123343",
+    "description": "Recien REBAJADA  solo 11000 usd casa de 2cuartos en Villanueva Santiago de las Vegas.\n\nSe vende casa en alto con su entrada independiente, totalmente enrrejada (100% segura y muy fresca): ventanas y puertas de hierro y cristal en su totalidad  piso de granito.. balcón, 2 cuartos, sala, cocina - comedor, baño y terraza cercada y preparada para lavar y tender compeltamente con piso de terracota (cero problemas de humedad)...donde incluye el motor de agua, tanques, telefono, los 2 splits, ducha ele",
+    "url": "https://www.revolico.com/item/recien-rebajada-casa-villanueva-solo-11000-58403326",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_58403326_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/e0f92527660896cddf22320431c8835169849934ae0aed23a09b68656ea6c1aa_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-58140417",
+    "adId": "58140417",
+    "title": "🚨 Rebajada Batería 12.8V 150Ah LifePO4 Dunfume",
+    "price": 440,
+    "currency": "USD",
+    "contactName": "Maria Perera",
+    "phone": "+5352793123",
+    "cleanPhone": "5352793123",
+    "description": "Ideal para INVERSORES\nCiclos de carga profundo\nBMS Integrado\n\nLa garantía es q son nuevas en caja selladas \n\nMensajeria gratis en lugares céntricos 🚗\n\n📲 Si quieres la tuya, escríbeme al WhatsApp.",
+    "url": "https://www.revolico.com/item/rebajada-bateria-128v-150ah-lifepo4-dunfume-58140417",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_58140417_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/b72176dbcae4812fb025d21d38eb25e6d980f426f82060553307f05593b9a094_detail_desktop.jpg"
+    ]
+  },
+  {
+    "id": "sniper-56199318",
+    "adId": "56199318",
+    "title": "Laptop rebajada Huawei 370 usd",
+    "price": 370,
+    "currency": "USD",
+    "contactName": "Eros Bagarotti",
+    "phone": "+5353085348",
+    "cleanPhone": "5353085348",
+    "description": "💻 Huawei MateBook — Gama alta  \n\n Intel Core i5‑10210U (4 núcleos, hasta 4.2 GHz)  \n🎮 NVIDIA GeForce MX250 (2 GB dedicados)  \n⚡ 8 GB DDR4  \n🚀 512 GB SSD PCIe NVMe \n🖥️ 14\" FHD IPS antirreflejos  \n🔋 4 h de autonomía + carga rápida  \n📦 Impecable (de uso) | 🛡 Garantía 7 días  \n💰 US$ ~400~\n N.P *370*\n💳 Aceptamos diferentes métodos de pago  \n🚚 Envíos disponibles  \n📲 WhatsApp | 📘 Facebook",
+    "url": "https://www.revolico.com/item/laptop-rebajada-huawei-370-usd-56199318",
+    "queryMatched": "rebajada",
+    "publishedDate": "2026-10-27",
+    "images": [
+      "assets/sniper/sniper_56199318_1.jpg"
+    ],
+    "cdnImages": [
+      "https://pic.revolico.com/pics/b0a08db0371d1c148775f4e0b2bbdc65ceceaf97c81f3ddb496003974154a99e_detail_desktop.jpg"
+    ]
+  }
+];
